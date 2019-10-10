@@ -1,0 +1,25 @@
+.buttonHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #282c34;
+}
+
+.button {
+  background-color: #09d3ac;
+  border: 1px solid #09d3ac;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+}
+
+.button:hover {
+  background-color: #c9fff4;
+  color: black;
+}

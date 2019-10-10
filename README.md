@@ -1,9 +1,13 @@
+# Webpage app using React.js
+
+For learning/demonstrating the React framework.
+
 ## Steps to run
 
 In the project directory, run the following:
 
-### `npm install`
-### `npm start`
+`npm install`
+`npm start`
 
 Browser should launch automatically.
 

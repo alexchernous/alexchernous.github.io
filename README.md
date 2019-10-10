@@ -7,6 +7,7 @@ For learning/demonstrating the React framework.
 In the project directory, run the following:
 
 `npm install`
+
 `npm start`
 
 Browser should launch automatically.

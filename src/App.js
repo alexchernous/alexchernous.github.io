@@ -5,8 +5,8 @@ import ButtonArray from './ButtonArray';
 import ContentContainer from './ContentContainer';
 
 class App extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);   
 
     this.state = {
       key: 'Welcome',
@@ -14,7 +14,7 @@ class App extends Component {
         'Welcome': 'Welcome to my page.',
         'About': 'About me',
         'Resume': 'Comp Sci',
-      }
+      },
     };
 
     this.updateKey = this.updateKey.bind(this);
@@ -27,12 +27,15 @@ class App extends Component {
   }
 
   render(){
+    const userName = this.props.userName;
+    const welcomeMessage = userName ? (", " + userName + "!") : "!";
+
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Welcome{welcomeMessage}
           </p>
           <a
             className="App-link"

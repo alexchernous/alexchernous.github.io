@@ -20,3 +20,28 @@
 .App-link {
   color: #09d3ac;
 }
+
+.Login {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+}
+
+.Login-form {
+  padding: 20px 20px;
+  display: block;
+}
+
+.button {
+  background-color: #09d3ac;
+  border: 1px solid #09d3ac;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+}

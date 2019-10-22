@@ -7,7 +7,7 @@ class ContentContainer extends Component {
     const text = list[index];
     
     return (
-      <div>
+      <div className="content">
         <p>{text}</p>
       </div>
     );

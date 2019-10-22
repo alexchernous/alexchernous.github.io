@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './Login.css';
 import App from './App';
 
 class Login extends Component {
@@ -7,9 +7,9 @@ class Login extends Component {
     super();
 
     this.state = {
-      name: 'John Doe',
+      name: '',
       nameFieldFirstClick: false,
-      password: 'Password123',
+      password: '',
       passwordFieldFirstClick: false,
       isLoggedIn: false
     }
@@ -23,6 +23,7 @@ class Login extends Component {
     this.setState({isLoggedIn: true});
   }
 
+  /* use as example for a field on the next page, not for login */
   handleChange(event) {
     const value = event.target.value;
     const name = event.target.name;
@@ -30,6 +31,7 @@ class Login extends Component {
     this.setState({[name]: value});
   }
 
+  /* use as example for a field on the next page, not for login */
   handleClick(event) {
     const name = event.target.name;
     const clickParam = event.target.name + "FieldFirstClick";
@@ -50,20 +52,20 @@ class Login extends Component {
     }
 
     return(
-    <div className="Login">
+    <div className="Login-wrapper">
       <h1>Login</h1>
       <h3>Enter your dummy credentials below</h3>
       
-      <form className="Login-form" onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <label>
-          Your name:
-          <input type="text" name="name" value={this.state.name} onChange={this.handleChange} onClick={this.handleClick} />
+          Name
+          <input type="text" name="name" value={this.state.name} placeholder="Name is required" required onChange={this.handleChange} onClick={this.handleClick} />
         </label>
         <label>
-          Your password:
-          <input type="text" name="password" value={this.state.password} onChange={this.handleChange} onClick={this.handleClick} />
+          Password
+          <input type="password" name="password" value={this.state.password} placeholder="Password is required" required onChange={this.handleChange} onClick={this.handleClick} />
         </label>
-        <input className='button' type="submit" value="Submit" />
+        <input type="submit" value="Log in" />
       </form>
     </div>
     );

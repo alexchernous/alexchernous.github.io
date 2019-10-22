@@ -22,6 +22,7 @@ class Button extends Component {
           value={this.props.name}
           onClick={this.handleButtonPress}
         >{this.props.name}</button>
+        
       </div>
       
     );

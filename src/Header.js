@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import Button from './Button';
-import './Button'
+import './Button.css';
 
-// const buttons = {
-//   about : 'About',
-//   resume : 'Resume'
-// };
 
-class ButtonArray extends Component {
+class Header extends Component {
   constructor() {
     super();
 
@@ -25,9 +21,10 @@ class ButtonArray extends Component {
         <Button name='Welcome' updateKeyHelp={this.updateKeyHelp}/>
         <Button name='About' updateKeyHelp={this.updateKeyHelp}/>
         <Button name='Resume' updateKeyHelp={this.updateKeyHelp}/>
+        
       </div>
     ); 
   }
 }
 
-export default ButtonArray;
+export default Header;

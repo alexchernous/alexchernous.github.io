@@ -1,3 +1,11 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  margin: 0px;
+  padding: 0px;
+}
+
 .App {
   text-align: center;
 }
@@ -10,38 +18,37 @@
   background-color: #282c34;
   min-height: 30vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #282c34;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+  font-size: 15px;
+  color: white;
+  position: fixed;
 }
 
 .App-link {
   color: #09d3ac;
 }
-
-.Login {
-  background-color: #282c34;
-  color: white;
-  text-align: center;
+.App-link:hover {
+  color: #c9fff4;
 }
 
-.Login-form {
-  padding: 20px 20px;
+.content {
   display: block;
-}
-
-.button {
-  background-color: #09d3ac;
-  border: 1px solid #09d3ac;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  transition-duration: 0.1s;
+  text-align: left;
+  padding: 20px;
+  color: #282c34;
 }

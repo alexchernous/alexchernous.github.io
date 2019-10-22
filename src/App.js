@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ButtonArray from './ButtonArray';
+import Header from './Header';
+import Footer from './Footer';
 import ContentContainer from './ContentContainer';
 
 class App extends Component {
@@ -37,17 +38,11 @@ class App extends Component {
           <p>
             Welcome{welcomeMessage}
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          
         </header>
-        <ButtonArray updateKey={this.updateKey} />
+        <Header updateKey={this.updateKey} />
         <ContentContainer list={this.state.content} index={this.state.key} />
+        <Footer />
       </div>
     );
   }

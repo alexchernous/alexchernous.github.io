@@ -1,0 +1,82 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #282c34;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1, h2, h3, h4 {
+  margin: 0px;
+  padding: 20px 0px 20px 0px;
+}
+
+.root {
+  background-color: #282c34;
+  margin: 0px;
+  padding: 0px;
+  
+}
+
+.Login-wrapper {
+  color: white;
+  text-align: center;
+  background-color: #282c34;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0px;
+  padding: 0px;
+  grid-gap: 10px;
+}
+
+label {
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  font-size: 20px;
+  text-align: left;
+}
+
+input {
+  margin: 0px;
+  padding: 8px;
+  width: 70%;
+  display: grid;
+}
+
+input:hover {
+  border: 1px solid #09d3ac;
+}
+
+input:invalid {
+  border: 1px solid #d30909;
+}
+
+input[type=submit] {
+  grid-template-columns: 1fr 2fr;
+  width: 50%;
+  height: 40px;
+  background-color: #09d3ac;
+  border: 0px solid #09d3ac;
+  color: #282c34;
+  margin: 0px;
+  padding: 0px;
+  font-size: 20px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+}
+
+input[type=submit]:hover {
+  background-color: #c9fff4;
+  border: 0px solid #c9fff4;
+  color: #282c34;
+}

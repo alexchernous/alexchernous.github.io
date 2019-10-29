@@ -1,45 +1,42 @@
-import React, { Component } from 'react';
-import './Login.css';
-import App from './App';
+import React, { Component } from "react";
+import arrow from "./arrow-up.png";
+import "./Login.css";
+import "./Explanations.css";
+import App from "./App";
 
 class Login extends Component {
   constructor(){
     super();
 
     this.state = {
-      name: '',
-      nameFieldFirstClick: false,
-      password: '',
-      passwordFieldFirstClick: false,
+      name: "",
+      formPressed: false,
+      // nameFieldFirstClick: false,
+      // passwordFieldFirstClick: false,
       isLoggedIn: false
     }
 
-    this.handleChange = this.handleChange.bind(this);
+    //this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
     this.setState({isLoggedIn: true});
+    this.setState({name: event.target.name.value});
   }
 
   /* use as example for a field on the next page, not for login */
-  handleChange(event) {
-    const value = event.target.value;
-    const name = event.target.name;
+  // handleChange(event) {
+  //   const value = event.target.value;
+  //   const name = event.target.name;
 
-    this.setState({[name]: value});
-  }
+  //   this.setState({[name]: value});
+  // }
 
   /* use as example for a field on the next page, not for login */
-  handleClick(event) {
-    const name = event.target.name;
-    const clickParam = event.target.name + "FieldFirstClick";
-
-    if(!this.state[clickParam]){
-      this.setState({[name]:''});
-    }
-    this.setState({[clickParam] : true});
+  handleClick() {
+    this.setState({formPressed : true});
   }
   
   render() {
@@ -52,23 +49,34 @@ class Login extends Component {
     }
 
     return(
-    <div className="Login-wrapper">
-      <h1>Login</h1>
-      <h3>Enter your dummy credentials below</h3>
+      <div>
+        <div className="Login-wrapper">
+          <h1>Login</h1>
+          <h3>Enter your dummy credentials below</h3>
+
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Name is required" required onClick={this.handleClick} />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" placeholder="Password is required" required onClick={this.handleClick}/>
+            </label>
+            <input type="submit" value="Log me in"/>
+          </form>
+        </div>
+        {
+          this.state.formPressed &&
+          <div className="tooltip">
+            <img src={arrow} />
+            <p className="tooltip-message">Form is not a controlled component since we don't want to store this info in plain text</p>
+          </div>
+        }
+      </div>
       
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name
-          <input type="text" name="name" value={this.state.name} placeholder="Name is required" required onChange={this.handleChange} onClick={this.handleClick} />
-        </label>
-        <label>
-          Password
-          <input type="password" name="password" value={this.state.password} placeholder="Password is required" required onChange={this.handleChange} onClick={this.handleClick} />
-        </label>
-        <input type="submit" value="Log in" />
-      </form>
-    </div>
     );
+    
   }
 }
 

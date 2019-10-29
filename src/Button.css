@@ -1,26 +1,35 @@
-.buttonHeader {
-  display: flex;
-  align-items: left;
-  background-color: #282c34;
-  padding: 2px;
+.headerAndTooltip {
+  height: 100%;
+  width: 90%;
+  padding: 0px;
+  margin: 0px 5px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
-.button {
-  height: 40px;
-  width: 130px;
-  background-color: #282c34;
-  border: 0px solid #09d3ac;
-  color: #09d3ac;
+.menu {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+  border: 0px solid black;
+  display: grid;
+}
+
+button {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  margin: 0px;
   padding: 0px;
   text-align: center;
-  text-decoration: none;
   font-size: 20px;
-  margin: 0px;
   cursor: pointer;
-  transition-duration: 0.1s;
 }
 
-.button:hover {
-  background-color: #c9fff4;
-  color: #282c34;
+button:hover {
+  background-color: #368127;
 }

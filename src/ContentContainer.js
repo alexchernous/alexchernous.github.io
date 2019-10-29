@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
 class ContentContainer extends Component { 
   render () {
@@ -9,6 +9,9 @@ class ContentContainer extends Component {
     return (
       <div className="content">
         <p>{text}</p>
+        <p className="responsive-content">
+          Hidden content to show media query responsiveness
+        </p>
       </div>
     );
   }

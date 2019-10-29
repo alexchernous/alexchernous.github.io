@@ -1,29 +1,25 @@
-import React, { Component } from 'react';
-import Button from './Button';
-import './Button.css';
-
+import React, { Component } from "react";
+import logo from "./logo.png";
+import "./App.css";
 
 class Header extends Component {
-  constructor() {
-    super();
-
-    this.updateKeyHelp = this.updateKeyHelp.bind(this);
-  }
-
-  updateKeyHelp(label) {
-    const { updateKey } = this.props;
-    updateKey(label);
+  constructor(props) {
+    super(props);
   }
 
   render() {
+    const headerMessage1 = "<<Large header for all your large header needs>>"
+    const headerMessage2 = "<<Click some buttons, resize screen>>"
     return (
-      <div className='buttonHeader'>
-        <Button name='Welcome' updateKeyHelp={this.updateKeyHelp}/>
-        <Button name='About' updateKeyHelp={this.updateKeyHelp}/>
-        <Button name='Resume' updateKeyHelp={this.updateKeyHelp}/>
-        
+      <div className="App-header">
+        <p>{headerMessage1}</p>
+        <img src={logo} className="App-logo"/>
+        <p>
+          Welcome{this.props.welcomeMessage}
+        </p>
+        <p>{headerMessage2}</p>
       </div>
-    ); 
+    );
   }
 }
 

@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Header from './Header';
-import Footer from './Footer';
-import ContentContainer from './ContentContainer';
+import React, { Component } from "react";
+import "./App.css";
+import Header from "./Header";
+import Menu from "./Menu";
+import Footer from "./Footer";
+import ContentContainer from "./ContentContainer";
 
 class App extends Component {
   constructor(props){
-    super(props);   
+    super(props);
 
     this.state = {
-      key: 'Welcome',
+      key: "Welcome",
       content: {
-        'Welcome': 'Welcome to my page.',
-        'About': 'About me',
-        'Resume': 'Comp Sci',
+        "Welcome": "Welcome to my page",
+        "About": "About me",
+        "Resume": "Comp Sci",
       },
     };
 
@@ -33,14 +33,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Welcome{welcomeMessage}
-          </p>
-          
-        </header>
-        <Header updateKey={this.updateKey} />
+        <Header welcomeMessage={welcomeMessage} />
+        <Menu updateKey={this.updateKey} />
         <ContentContainer list={this.state.content} index={this.state.key} />
         <Footer />
       </div>

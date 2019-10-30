@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import "./App.css";
 
 class Footer extends Component {
   render() {
     const footerNote = "<<A footer for some credits or extra links>>";
     return (
-      <div className="App-footer">
+      <div className="App-footer" style={{bottom: "0", position: "fixed"}}>
         
         <a
           className="App-link"

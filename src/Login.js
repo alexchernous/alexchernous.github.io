@@ -1,29 +1,46 @@
 import React, { Component } from "react";
-import arrow from "./arrow-up.png";
-import "./Login.css";
-import "./Explanations.css";
-import App from "./App";
+import Callout from "react-callout-component";
+import CalloutContent from "./CalloutContent";
 
 class Login extends Component {
+  _isMounted = false;
+
   constructor(){
     super();
 
     this.state = {
-      name: "",
       formPressed: false,
       // nameFieldFirstClick: false,
       // passwordFieldFirstClick: false,
-      isLoggedIn: false
+      form: null
     }
+    this.loginForm = React.createRef();
 
     //this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.closeCallout = this.closeCallout.bind(this);
+  }
+
+  componentDidMount() {
+    this._isMounted = true;
+
+    if (this._isMounted) {
+      this.setState({
+        form: this.loginForm.current
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    console.log("UNMOUNTED LOGIN");
+    this._isMounted = false;
   }
 
   handleSubmit(event) {
-    this.setState({isLoggedIn: true});
-    this.setState({name: event.target.name.value});
+    if (this._isMounted) {
+      this.props.updateLoginStatus(true, event.target.name.value);
+    }
   }
 
   /* use as example for a field on the next page, not for login */
@@ -36,45 +53,51 @@ class Login extends Component {
 
   /* use as example for a field on the next page, not for login */
   handleClick() {
-    this.setState({formPressed : true});
+    if (this._isMounted) {
+      this.setState({formPressed : true});
+    }
+  }
+
+  closeCallout() {
+    if (this._isMounted) {
+      this.setState({formPressed : false});
+    }
   }
   
   render() {
-    if(this.state.isLoggedIn){
-      return(
-        <div>
-          <App userName={this.state.name}/>
-        </div>
-      );
-    }
+
+    const text = "Form isn't a controlled component (want to avoid storing plain text info in state)";
 
     return(
-      <div>
-        <div className="Login-wrapper">
-          <h1>Login</h1>
-          <h3>Enter your dummy credentials below</h3>
+      <div className="Login-wrapper"  style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+        <h1>Login</h1>
+        <h3>Enter your dummy credentials below</h3>
 
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              Name
-              <input type="text" name="name" placeholder="Name is required" required onClick={this.handleClick} />
-            </label>
-            <label>
-              Password
-              <input type="password" name="password" placeholder="Password is required" required onClick={this.handleClick}/>
-            </label>
-            <input type="submit" value="Log me in"/>
-          </form>
-        </div>
-        {
-          this.state.formPressed &&
-          <div className="tooltip">
-            <img src={arrow} />
-            <p className="tooltip-message">Form is not a controlled component since we don't want to store this info in plain text</p>
-          </div>
-        }
+        <form 
+          ref={this.loginForm} 
+          onClick={this.handleClick} 
+          onSubmit={this.handleSubmit}
+        >
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Name is required" required  />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" placeholder="Password is required" required />
+          </label>
+          <input type="submit" value="Log me in"/>
+        </form>
+
+        <Callout 
+          isVisible={this.state.formPressed} 
+          parentElement={this.state.form} 
+          side="bottom"
+        >
+
+          <CalloutContent text={text} closeCallout={this.closeCallout} />
+        </Callout>
       </div>
-      
     );
     
   }

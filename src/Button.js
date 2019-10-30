@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import "./Button.css";
-import "./Explanations.css";
 
 class Button extends Component {
 

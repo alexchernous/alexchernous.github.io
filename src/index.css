@@ -1,7 +1,4 @@
-html, body, .root {
-  height: 100%;
-  width: 100%;
-  background-color: #282c34;
+html, body {
   margin: 0px;
   padding: 0px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -14,4 +11,53 @@ html, body, .root {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+element {
+  display: flex;
+  background-color: green;
+}
+
+.callout {
+  border-radius: 4px;
+  position: absolute;
+  padding: 5px;
+  z-index: 9999;
+}
+
+.callout-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+}
+
+button {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #204d17;
+}
+
+input[type=submit] {
+  width: 100px;
+  height: 100%;
+  background-color: #368127;
+  border: 0px;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #204d17;
 }

@@ -4,6 +4,7 @@ import Menu from "./Menu";
 import Login from "./Login";
 import Footer from "./Footer";
 import ContentContainer from "./ContentContainer";
+import TextBox from "./TextBox";
 
 class App extends Component {
   constructor(props){
@@ -24,6 +25,7 @@ class App extends Component {
     this.updateKey = this.updateKey.bind(this);
   }
 
+  /* maybe can use context here */
   updateKey(newKey) {
     this.setState({
       key: newKey,
@@ -47,6 +49,7 @@ class App extends Component {
           <Header welcomeMessage={welcomeMessage} />
           <Menu updateKey={this.updateKey} />
           <ContentContainer list={this.state.content} index={this.state.key} />
+          <TextBox />
           <Footer />
         </div>
       );

@@ -13,7 +13,8 @@ class Menu extends Component {
     this.state = {
       buttonClick: false,
       container: null,
-    }
+    };
+
     this.buttonContainer = React.createRef();
     this.closeCallout = this.closeCallout.bind(this);
     this.updateKeyHelp = this.updateKeyHelp.bind(this);
@@ -67,7 +68,7 @@ class Menu extends Component {
           style={{backgroundColor: "blue"}}
         >
 
-          <CalloutContent text={text} closeCallout={this.closeCallout} />
+          <CalloutContent content={text} closeCallout={this.closeCallout} />
         </Callout>
       </div>
     ); 

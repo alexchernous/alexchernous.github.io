@@ -10,13 +10,11 @@ class Login extends Component {
 
     this.state = {
       formPressed: false,
-      // nameFieldFirstClick: false,
-      // passwordFieldFirstClick: false,
       form: null
-    }
+    };
+
     this.loginForm = React.createRef();
 
-    //this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.closeCallout = this.closeCallout.bind(this);
@@ -43,15 +41,6 @@ class Login extends Component {
     }
   }
 
-  /* use as example for a field on the next page, not for login */
-  // handleChange(event) {
-  //   const value = event.target.value;
-  //   const name = event.target.name;
-
-  //   this.setState({[name]: value});
-  // }
-
-  /* use as example for a field on the next page, not for login */
   handleClick() {
     if (this._isMounted) {
       this.setState({formPressed : true});
@@ -95,7 +84,7 @@ class Login extends Component {
           side="bottom"
         >
 
-          <CalloutContent text={text} closeCallout={this.closeCallout} />
+          <CalloutContent content={text} closeCallout={this.closeCallout} />
         </Callout>
       </div>
     );

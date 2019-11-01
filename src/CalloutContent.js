@@ -16,7 +16,7 @@ class CalloutContent extends Component {
     return (
       <React.Fragment>
         <span style={{color: "white", }}>
-          {this.props.text}
+          {this.props.content}
         </span>
         <img 
           src={red_x} 

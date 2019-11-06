@@ -61,7 +61,7 @@ class TextBox extends Component {
   }
 
   render () {
-    const text =  "This text area is a controlled component, often used in forms to decide the next form action based on some intermediate user input. E.g. populating a certain set of fields on user choice of a select dropdown.\n You typed: " + "\"" + this.state.value + "\"";
+    const text =  "This text area is a controlled component, often used in forms to decide the next form action based on some intermediate user input. E.g. populating a certain set of fields on user choice of a select dropdown.\n You typed: \"" + this.state.value + "\"";
 
     return (
       <form onSubmit={this.handleSubmit}>

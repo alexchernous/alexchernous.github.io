@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import Radium from "radium";
 import Callout from "react-callout-component";
 import CalloutContent from "./CalloutContent";
 
 class Login extends Component {
   _isMounted = false;
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
 
     this.state = {
       formPressed: false,
@@ -31,7 +32,6 @@ class Login extends Component {
   }
 
   componentWillUnmount() {
-    console.log("UNMOUNTED LOGIN");
     this._isMounted = false;
   }
 
@@ -58,24 +58,48 @@ class Login extends Component {
     const text = "Form isn't a controlled component (want to avoid storing plain text info in state)";
 
     return(
-      <div className="Login-wrapper"  style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-        <h1>Login</h1>
-        <h3>Enter your dummy credentials below</h3>
+      <div  
+        style={{
+            display: "grid",  
+            justifyContent: "center", 
+            alignItems: "center",
+            color: "black",
+            textAlign: "center",
+            backgroundColor: "white",
+            margin: "0px",
+            padding: "0px",
+            height: "50%",
+            width: "100%"
+          }}
+      >
+        <h1 style={{fontWeight: "700", fontSize: "40px"}}>Login</h1>
+        <h3 style={{fontWeight: "100"}}>Enter your dummy credentials below</h3>
 
         <form 
           ref={this.loginForm} 
           onClick={this.handleClick} 
           onSubmit={this.handleSubmit}
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "grid",
+            margin: "5px",
+            padding: "0px",
+            gridGap: "10px"
+          }}
         >
-          <label>
+          <label style={this.props.appDefaultThemes["labelStyle"]}>
             Name
-            <input type="text" name="name" placeholder="Name is required" required  />
+            <input key="name" style={this.props.appDefaultThemes["inputStyle"]} type="text" placeholder="Name is required" required  />
           </label>
-          <label>
+          <label style={this.props.appDefaultThemes["labelStyle"]}>
             Password
-            <input type="password" name="password" placeholder="Password is required" required />
+            <input key="password" style={this.props.appDefaultThemes["inputStyle"]} type="password" placeholder="Password is required" required />
           </label>
-          <input type="submit" value="Log me in"/>
+          <input 
+            style={
+              [this.props.appDefaultThemes["buttonBase"], this.props.appDefaultThemes["submit"]]} 
+            type="submit" value="Log me in"/>
         </form>
 
         <Callout 
@@ -92,5 +116,4 @@ class Login extends Component {
   }
 }
 
-
-export default Login;
+export default Radium(Login);

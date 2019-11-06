@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Radium from "radium";
 import Button from "./Button";
 import Callout from "react-callout-component";
 import CalloutContent from "./CalloutContent";
@@ -7,8 +8,8 @@ import CalloutContent from "./CalloutContent";
 class Menu extends Component {
   _isMounted = false;
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       buttonClick: false,

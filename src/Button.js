@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+import Radium from "radium";
+import {ThemeContext} from './theme-context';
+
 
 class Button extends Component {
+  static contextType = ThemeContext;
 
   constructor(props) {
     super(props);
@@ -13,9 +17,13 @@ class Button extends Component {
   }
 
   render () {
+    
     return (
       <div>
         <button 
+          style={
+            [this.context["buttonBase"], this.context["menu"]]
+          }
           value={this.props.name}
           onClick={this.handleButtonPress}
         >
@@ -27,5 +35,6 @@ class Button extends Component {
     );
   }
 }
+Button.contextType = ThemeContext;
 
-export default Button;
+export default Radium(Button);

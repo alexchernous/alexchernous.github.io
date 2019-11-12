@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Radium from "radium";
-import Button from "./Button";
+import MyButton from "./MyButton";
 import Callout from "react-callout-component";
 import CalloutContent from "./CalloutContent";
+import {Navbar, Nav, Form, FormControl, Button} from "react-bootstrap";
 
 
 class Menu extends Component {
@@ -55,22 +55,39 @@ class Menu extends Component {
     const text = "Demonstration of state & prop usage";
 
     return (
-      <div className="headerAndTooltip" style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "left"}}>
-        <div ref={this.buttonContainer} className="menu" style={{width: "200px"}}>
-          <Button name="Welcome" updateKeyHelp={this.updateKeyHelp}/>
-          <Button name="About" updateKeyHelp={this.updateKeyHelp}/>
-          <Button name="Resume" updateKeyHelp={this.updateKeyHelp}/>
+      <div>
+        <div>
+          <Navbar bg="dark" variant="dark">
+            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Nav className="mr-auto">
+              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#features">Features</Nav.Link>
+              <Nav.Link href="#pricing">Pricing</Nav.Link>
+            </Nav>
+            <Form inline>
+              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+              <Button variant="outline-info">Search</Button>
+            </Form>
+          </Navbar>
         </div>
+        
+        <div className="headerAndTooltip" style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "left"}}>
+          <div ref={this.buttonContainer} className="menu" style={{width: "200px"}}>
+            <MyButton name="Welcome" updateKeyHelp={this.updateKeyHelp}/>
+            <MyButton name="About" updateKeyHelp={this.updateKeyHelp}/>
+            <MyButton name="Resume" updateKeyHelp={this.updateKeyHelp}/>
+          </div>
 
-        <Callout 
-          isVisible={this.state.buttonClick} 
-          parentElement={this.state.container} 
-          side="right"
-          style={{backgroundColor: "blue"}}
-        >
+          <Callout 
+            isVisible={this.state.buttonClick} 
+            parentElement={this.state.container} 
+            side="right"
+            style={{backgroundColor: "blue"}}
+          >
 
-          <CalloutContent content={text} closeCallout={this.closeCallout} />
-        </Callout>
+            <CalloutContent content={text} closeCallout={this.closeCallout} />
+          </Callout>
+        </div>
       </div>
     ); 
   }

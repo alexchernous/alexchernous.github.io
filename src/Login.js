@@ -55,7 +55,7 @@ class Login extends Component {
   
   render() {
 
-    const text = "Form isn't a controlled component (want to avoid storing plain text info in state)";
+    const text = "Form isn't a controlled component - want to avoid storing plain text info in state";
 
     return(
       <div  
@@ -106,6 +106,7 @@ class Login extends Component {
           isVisible={this.state.formPressed} 
           parentElement={this.state.form} 
           side="bottom"
+          color="rgba(50, 67, 75, 1)"
         >
 
           <CalloutContent content={text} closeCallout={this.closeCallout} />

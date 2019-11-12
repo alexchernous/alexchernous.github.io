@@ -15,11 +15,6 @@ code {
     monospace;
 }
 
-element {
-  display: flex;
-  background-color: green;
-}
-
 .callout {
   border-radius: 4px;
   position: absolute;

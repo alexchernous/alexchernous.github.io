@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Radium from "radium";
 import Callout from "react-callout-component";
 import CalloutContent from "./CalloutContent";
+import {ThemeContext, appDefaultThemes} from './theme-context';
 
 class Login extends Component {
   _isMounted = false;
@@ -88,17 +89,17 @@ class Login extends Component {
             gridGap: "10px"
           }}
         >
-          <label style={this.props.appDefaultThemes["labelStyle"]}>
+          <label style={appDefaultThemes["labelStyle"]}>
             Name
-            <input key="name" style={this.props.appDefaultThemes["inputStyle"]} type="text" placeholder="Name is required" required  />
+            <input key="name" style={appDefaultThemes["inputStyle"]} type="text" placeholder="Name is required" required  />
           </label>
-          <label style={this.props.appDefaultThemes["labelStyle"]}>
+          <label style={appDefaultThemes["labelStyle"]}>
             Password
-            <input key="password" style={this.props.appDefaultThemes["inputStyle"]} type="password" placeholder="Password is required" required />
+            <input key="password" style={appDefaultThemes["inputStyle"]} type="password" placeholder="Password is required" required />
           </label>
           <input 
             style={
-              [this.props.appDefaultThemes["buttonBase"], this.props.appDefaultThemes["submit"]]} 
+              [appDefaultThemes["buttonBase"], appDefaultThemes["submit"]]} 
             type="submit" value="Log me in"/>
         </form>
 

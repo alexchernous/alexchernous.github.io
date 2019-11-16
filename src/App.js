@@ -1,79 +1,35 @@
 import React, { Component } from "react";
 import Radium from "radium";
-import Header from "./Header";
 import Menu from "./Menu";
+import Main from "./Main";
+import Projects from "./Projects";
+import Resume from "./Resume";
+import AboutMe from "./AboutMe";
 import Login from "./Login";
-import Footer from "./Footer";
-import ContentContainer from "./ContentContainer";
-import TextBox from "./TextBox";
-import {ThemeContext, appDefaultThemes} from './theme-context';
 
-
-/**
- * figure out how to use routers for different pages
- */
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 class App extends Component {
-  constructor(props){
-    super(props);
 
-    this.state = {
-      key: "Welcome",
-      content: {
-        "Welcome": "Welcome to my page",
-        "About": "About me",
-        "Resume": "Comp Sci",
-      },
-      isLoggedIn: false,
-      userName: "",
-    };
-
-    
-
-    this.updateLoginStatus = this.updateLoginStatus.bind(this);
-    this.updateKey = this.updateKey.bind(this);
-  }
-
-  /* maybe can use context here */
-  updateKey(newKey) {
-    this.setState({
-      key: newKey,
-    });
-  }
-
-  updateLoginStatus(loginStatus, name) {
-    this.setState({
-      isLoggedIn: loginStatus,
-      userName: name
-    });
-  }
+  
 
   render(){
-    if (this.state.isLoggedIn){
-
-      const welcomeMessage = this.state.userName ? (", " + this.state.userName + "!") : "!";
-
       return (
-        <div className="App">
-          <Header welcomeMessage={welcomeMessage} />
+        
+        <Router>
+          <Menu />
+          <Switch>
+            <Route path="/main" component={Main} />
+            <Route path="/projects" component={Projects} />
+            <Route path="/resume" component={Resume} />
+            <Route path="/about" component={AboutMe} />
+            <Route path="/login" component={Login} />
 
-          <ThemeContext.Provider value={appDefaultThemes}>
-            <Menu updateKey={this.updateKey} />
-          </ThemeContext.Provider>
-
-          <ContentContainer list={this.state.content} index={this.state.key} />
-          <TextBox />
-          <Footer />
-        </div>
+          </Switch>
+        </Router>
+      
       );
     }
-    
-    return (
-      <Login appDefaultThemes={appDefaultThemes} updateLoginStatus={this.updateLoginStatus} />
-    );
-
-    
-  }
 }
 
 export default Radium(App);

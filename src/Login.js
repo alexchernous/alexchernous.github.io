@@ -11,8 +11,8 @@ class Login extends Component {
     super(props);
 
     this.state = {
-      formPressed: false,
-      form: null
+      formPressed : false,
+      form : null
     };
 
     this.loginForm = React.createRef();

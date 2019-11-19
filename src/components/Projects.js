@@ -4,8 +4,8 @@ class Projects extends Component {
 
   render() {
     return (
-      <div>
-        <p>These are my projects.</p>
+      <div style={{margin : "10px"}}>
+        <p>Please <a href="https://github.com/alexchernous/" target="_blank">visit my github</a>.</p>
       </div>
     ); 
   }

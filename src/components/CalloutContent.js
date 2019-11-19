@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import red_x from "./red-x.png";
+import red_x from "../img/red-x.png";
 
 class CalloutContent extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class CalloutContent extends Component {
         <img 
           src={red_x} 
           alt="logo" 
-          style={{padding: "5px", height: "15px", width: "15px", cursor: "pointer"}}onClick={this.closeCallout}
+          style={{padding: "5px", height: "25px", width: "25px", cursor: "pointer"}}onClick={this.closeCallout}
         />
       </React.Fragment>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
-import resumePDF from "./AlexChernousResume.pdf";
 import { Button } from "react-bootstrap";
+import { Document, Page, pdfjs } from "react-pdf";
+import resumePDF from "../content/AlexChernousResume.pdf";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -15,17 +15,27 @@ class Resume extends Component {
       numPages : null,
       pageNumber : 1,
       firstPage : true,
-      finalPage : false,
+      finalPage : false
     };
 
     this.onDocumentLoadSuccess = this.onDocumentLoadSuccess.bind(this);
     this.handleNext = this.handleNext.bind(this);
     this.handlePrevious = this.handlePrevious.bind(this);
   }
-  
 
   onDocumentLoadSuccess = ({ numPages }) => {
     this.setState({ numPages });
+  }
+
+  // https://github.com/wojtekmaj/react-pdf/issues/332#issuecomment-458121654
+  removeTextLayerOffset() {
+    const textLayers = document.querySelectorAll(".react-pdf__Page__textContent");
+    textLayers.forEach(layer => {
+      const { style } = layer;
+      style.top = "0";
+      style.left = "0";
+      style.transform = "";
+    });
   }
 
   // disabling button only works on extra click...
@@ -49,23 +59,28 @@ class Resume extends Component {
   }
 
   render() {
-
     return (
-      <div>
-        <Button variant="info" onClick={this.handlePrevious}>Previous</Button>
-        <Button variant="info" onClick={this.handleNext}>Next</Button>
-        <p>Page {this.state.pageNumber} of {this.state.numPages}</p>
+      <div style={{
+        marginTop: "10px",
+        display : "grid", 
+        justifyContent : "center", 
+        textAlign: "center",
+        width : "100%", 
+        }}>
+        
 
-        <Document
-          file={resumePDF}
-          onLoadSuccess={this.onDocumentLoadSuccess}
-        >
-          <Page pageNumber={this.state.pageNumber} />
+        <Document file={resumePDF} onLoadSuccess={this.onDocumentLoadSuccess}>
+          <Page onLoadSuccess={() => this.removeTextLayerOffset()} pageNumber={this.state.pageNumber} />
         </Document>
-        
-        
 
+        <div style={{display : "grid", gridTemplateColumns : "1fr 1fr", gridGap : "10px", marginTop : "10px", borderTop : "1px solid rgb(52, 58, 64, 0.1)"}}>
+          <Button variant="secondary" onClick={this.handlePrevious} style={{width : "100%"}}>Previous</Button>
+          <Button variant="secondary" onClick={this.handleNext} style={{width : "100%"}}>Next</Button>
+        </div>
+        
+        
       </div>
+      
     );
   }
 }

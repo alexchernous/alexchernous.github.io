@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import Radium from "radium";
 import Callout from "react-callout-component";
 import CalloutContent from "./CalloutContent";
-import {ThemeContext, appDefaultThemes} from './theme-context';
+import { appDefaultThemes } from "./theme-context";
+import { Redirect } from "react-router-dom";
+
+// ThemeContext?
 
 class Login extends Component {
   _isMounted = false;
@@ -12,7 +15,8 @@ class Login extends Component {
 
     this.state = {
       formPressed : false,
-      form : null
+      form : null,
+      redirectOnLogin : false,
     };
 
     this.loginForm = React.createRef();
@@ -38,8 +42,12 @@ class Login extends Component {
 
   handleSubmit(event) {
     if (this._isMounted) {
+      this.setState({ redirectOnLogin : true });
       this.props.updateLoginStatus(true, event.target.name.value);
     }
+
+    //prevents refresh
+    event.preventDefault();
   }
 
   handleClick() {
@@ -58,22 +66,26 @@ class Login extends Component {
 
     const text = "Form isn't a controlled component - want to avoid storing plain text info in state";
 
+    const redirectOnLogin = this.state.redirectOnLogin;
+    if (redirectOnLogin) {
+        return <Redirect to="/" />
+    }
+
     return(
-      <div  
+      <div 
         style={{
-            display: "grid",  
-            justifyContent: "center", 
-            alignItems: "center",
-            color: "black",
-            textAlign: "center",
-            backgroundColor: "white",
-            margin: "0px",
-            padding: "0px",
-            height: "50%",
-            width: "100%"
+          display: "grid",  
+          justifyContent: "center", 
+          color: "black",
+          textAlign: "center",
+          background: "rgb(234, 234, 235)",
+          margin: "0px",
+          padding: "0px",
+          height: "50%",
+          width: "100%"
           }}
       >
-        <h1 style={{fontWeight: "700", fontSize: "40px"}}>Login</h1>
+        <h1 style={{marginTop: "50px", fontWeight: "700", fontSize: "40px"}}>Login</h1>
         <h3 style={{fontWeight: "100"}}>Enter your dummy credentials below</h3>
 
         <form 
@@ -91,7 +103,7 @@ class Login extends Component {
         >
           <label style={appDefaultThemes["labelStyle"]}>
             Name
-            <input key="name" style={appDefaultThemes["inputStyle"]} type="text" placeholder="Name is required" required  />
+            <input name="name" key="name" style={appDefaultThemes["inputStyle"]} type="text" placeholder="Name is required" required  />
           </label>
           <label style={appDefaultThemes["labelStyle"]}>
             Password
@@ -103,15 +115,15 @@ class Login extends Component {
             type="submit" value="Log me in"/>
         </form>
 
-        <Callout 
+        {/* <Callout 
           isVisible={this.state.formPressed} 
           parentElement={this.state.form} 
           side="bottom"
-          color="rgba(50, 67, 75, 1)"
+          color="rgb(52, 58, 64)"
         >
 
           <CalloutContent content={text} closeCallout={this.closeCallout} />
-        </Callout>
+        </Callout> */}
       </div>
     );
     

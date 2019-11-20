@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Radium from "radium";
-import Callout from "react-callout-component";
 import CalloutContent from "./CalloutContent";
 import { appDefaultThemes } from "./theme-context";
 import { Redirect } from "react-router-dom";
+import { Overlay, Tooltip } from "react-bootstrap";
 
 // ThemeContext?
 
@@ -114,16 +114,12 @@ class Login extends Component {
               [appDefaultThemes["buttonBase"], appDefaultThemes["submit"]]} 
             type="submit" value="Log me in"/>
         </form>
-
-        {/* <Callout 
-          isVisible={this.state.formPressed} 
-          parentElement={this.state.form} 
-          side="bottom"
-          color="rgb(52, 58, 64)"
-        >
-
-          <CalloutContent content={text} closeCallout={this.closeCallout} />
-        </Callout> */}
+        
+        <Overlay target={this.state.form} show={this.state.formPressed} placement="bottom">
+          <Tooltip id="overlay-example">
+            <CalloutContent content={text} closeCallout={this.closeCallout} />
+          </Tooltip>
+        </Overlay>
       </div>
     );
     

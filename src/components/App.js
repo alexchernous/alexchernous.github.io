@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import Radium from "radium";
-import Menu from "./Menu";
+import Header from "./Header";
 import Home from "./Home";
 import Projects from "./Projects";
 import Resume from "./Resume";
 import AboutMe from "./AboutMe";
 import Login from "./Login";
+import Footer from "./Footer";
 import { BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom"
+
+//color for accents #e0a800
 
 class App extends Component {
   constructor(props) {
@@ -27,15 +30,13 @@ class App extends Component {
   }
 
   logOut() {
-    this.setState({ isLoggedIn : false, userName : 'anonymous' });
+    this.setState({ isLoggedIn : false, userName : "anonymous" });
   }
 
   render(){
       return (
-        <div style={{background: "rgb(52, 58, 64, 0.1)"}}>
-          
           <Router>
-            <Menu isLoggedIn={this.state.isLoggedIn} userName={this.state.userName} />
+            <Header isLoggedIn={this.state.isLoggedIn} userName={this.state.userName} />
             <Switch>
               <Route path="/home" component={Home} />
               <Route path="/projects" component={Projects} />
@@ -46,9 +47,9 @@ class App extends Component {
               <Redirect exact from="/" to="/home" />
               <Redirect exact from="/logout" to="/" />
             </Switch>
+            
+            <Footer />
           </Router>
-
-        </div>
       );
     }
 }

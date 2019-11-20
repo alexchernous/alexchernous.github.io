@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import red_x from "../img/red-x.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 
 class CalloutContent extends Component {
   constructor(props) {
@@ -11,19 +12,15 @@ class CalloutContent extends Component {
   closeCallout() {
     this.props.closeCallout();
   }
-
+  
   render() {
     return (
-      <React.Fragment>
-        <span style={{color: "white", }}>
-          {this.props.content}
-        </span>
-        <img 
-          src={red_x} 
-          alt="logo" 
-          style={{padding: "5px", height: "25px", width: "25px", cursor: "pointer"}}onClick={this.closeCallout}
-        />
-      </React.Fragment>
+        <div style={{display : "flex", alignItems : "center"}}>
+          <span style={{color: "white"}}>
+            {this.props.content}
+          </span>
+          <FontAwesomeIcon icon={faTimesCircle} color="#ff6e6e" onClick={this.closeCallout} style={{margin: "5px"}} />
+        </div>
     );
   }
 }

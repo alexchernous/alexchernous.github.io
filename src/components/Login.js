@@ -78,7 +78,6 @@ class Login extends Component {
           justifyContent: "center", 
           color: "black",
           textAlign: "center",
-          background: "rgb(234, 234, 235)",
           margin: "0px",
           padding: "0px",
           height: "50%",

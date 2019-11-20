@@ -5,7 +5,7 @@ import resumePDF from "../content/AlexChernousResume.pdf";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-
+//bootstrap carousel?
 class Resume extends Component {
 
   constructor (props) {
@@ -65,7 +65,7 @@ class Resume extends Component {
         display : "grid", 
         justifyContent : "center", 
         textAlign: "center",
-        width : "100%", 
+        width : "100%",
         }}>
         
 

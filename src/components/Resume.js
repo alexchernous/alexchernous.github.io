@@ -74,8 +74,8 @@ class Resume extends Component {
         </Document>
 
         <div style={{display : "grid", gridTemplateColumns : "1fr 1fr", gridGap : "10px", marginTop : "10px", borderTop : "1px solid rgb(52, 58, 64, 0.1)"}}>
-          <Button variant="secondary" onClick={this.handlePrevious} style={{width : "100%"}}>Previous</Button>
-          <Button variant="secondary" onClick={this.handleNext} style={{width : "100%"}}>Next</Button>
+          <Button variant="secondary" onClick={this.handlePrevious} style={{width : "100%"}}>Previous Page</Button>
+          <Button variant="secondary" onClick={this.handleNext} style={{width : "100%"}}>Next Page</Button>
         </div>
         
         

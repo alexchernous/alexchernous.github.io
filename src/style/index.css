@@ -33,6 +33,25 @@ code {
   position: absolute;
 }
 
+.drop-down-link {
+  display: block;
+  padding: 5px 14px;
+  color: rgba(255, 255, 255, .5);
+}
+
+.drop-down-link:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, .75);
+}
+
+.dropdown-menu.show {
+  background: #343a40;
+  border: 0px;
+  min-width: 0px;
+  text-align: left;
+  justify-content: right;
+}
+
 .colorTester {
   color: rgb(212, 173, 45);
   color: rgba(233, 188, 40, 0.699);

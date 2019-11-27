@@ -11,37 +11,17 @@ I put this together with [React.js](https://reactjs.org/) and [Bootstrap.js](htt
 
 Most of the components you see (`buttons`, `headers`, `links` etc.) are Bootstrap ([react-bootstrap] (https://react-bootstrap.github.io/)) with the exception of the login page.</br>If you'd like to see my own styling done from scratch please refer to the **Login** button at the top right of the screen.
 
-#### Packages and Dependencies
-
-```javascript
-    "@fortawesome/fontawesome-free": "^5.11.2",
-    "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/react-fontawesome": "^0.1.7",
-    "bootstrap": "^4.3.1",
-    "radium": "^0.26.0",
-    "react": "^16.10.2",
-    "react-bootstrap": "^1.0.0-beta.14",
-    "react-callout-component": "^2.1.0",
-    "react-dom": "^16.10.2",
-    "react-markdown": "^4.2.2",
-    "react-pdf": "^4.1.0",
-    "react-router-bootstrap": "^0.25.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
-```
-
 ---
 
-## Short explanation of pages.
+## Short explanation of pages
 
 <dl>
 
   <dt>Home</dt>
-    <dd>This Home page component acts as a little introduction.</dd>
+    <dd>This Home page component acts as a little introduction and outline.</dd>
 
   <dt>Projects</dt>
-    <dd>Projects page is a component designed to hold my github activities.</dd>
+    <dd>Projects page is a component designed to hold <a href="https://github.com/alexchernous" target="_blank">my github</a> activities.</dd>
 
   <dt>Resume</dt>
     <dd>In Resume you'll find my up to date CV.</dd>
@@ -55,3 +35,24 @@ Most of the components you see (`buttons`, `headers`, `links` etc.) are Bootstra
 </dl>
 
 ---
+
+## For enthusiasts
+#### Packages and Dependencies
+
+```javascript
+"@fortawesome/fontawesome-free": "^5.11.2",
+"@fortawesome/fontawesome-svg-core": "^1.2.25",
+"@fortawesome/free-brands-svg-icons": "^5.11.2",
+"@fortawesome/free-solid-svg-icons": "^5.11.2",
+"@fortawesome/react-fontawesome": "^0.1.7",
+"bootstrap": "^4.3.1",
+"radium": "^0.26.0",
+"react": "^16.10.2",
+"react-bootstrap": "^1.0.0-beta.14",
+"react-dom": "^16.10.2",
+"react-markdown": "^4.2.2",
+"react-pdf": "^4.1.0",
+"react-router-bootstrap": "^0.25.0",
+"react-router-dom": "^5.1.2",
+"react-scripts": "3.2.0"
+```

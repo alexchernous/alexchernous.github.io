@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import { Navbar, Nav, Button, Overlay, Tooltip } from "react-bootstrap";
+import { Navbar, Nav, Button, NavDropdown } from "react-bootstrap";
 import Radium from "radium";
 import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import LoginMessage from "./LoginMessage";
+import MyDropDown from "./MyDropDown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faProjectDiagram, faFile, faUser, faRocket } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faProjectDiagram, faFile, faUser, faRocket } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 class Header extends Component {
 
@@ -41,6 +43,7 @@ class Header extends Component {
   }
   
   // consider using map() to create the nav links and fontawesome icons
+  // reactive resizing makes the icons and link to stack on top of each other
   render() {
     return (
       <div style={{display : "flex", width : "100%"}}>
@@ -54,19 +57,33 @@ class Header extends Component {
               </Navbar.Brand>
             </LinkContainer>
             <Nav className="mr-auto">
-              <Nav.Link eventKey="1" as={Link} to="/home" style={{transition : "0.15s"}}>
+              <Nav.Link eventKey="1" as={Link} to="/home" style={{transition : "0.15s", whiteSpace: "nowrap"}}>
                 <FontAwesomeIcon icon={faHome} color="#e0a800" style={{marginRight : "5px"}} />
                 Home
               </Nav.Link>
-              <Nav.Link eventKey="2" as={Link} to="/projects" style={{transition : "0.15s"}}>
+              <Nav.Link eventKey="2" as={Link} to="/projects" style={{transition : "0.15s", whiteSpace: "nowrap"}}>
                 <FontAwesomeIcon icon={faProjectDiagram} color="#e0a800" style={{marginRight : "5px"}} />
                 Projects
               </Nav.Link>
-              <Nav.Link eventKey="3" as={Link} to="/resume" style={{transition : "0.15s"}}>
+              <Nav.Link eventKey="3" as={Link} to="/resume" style={{transition : "0.15s", whiteSpace: "nowrap"}}>
                 <FontAwesomeIcon icon={faFile} color="#e0a800" style={{marginRight : "5px"}} />
                 Resume
               </Nav.Link>
-              <Nav.Link eventKey="4" as={Link} to="/about" style={{transition : "0.15s"}}>
+            
+              <NavDropdown 
+                title={<MyDropDown />}
+              >
+                <Nav.Link bsPrefix="drop-down-link" href="https://github.com/alexchernous" target="_blank" style={{transition : "0.15s", whiteSpace: "nowrap"}}>
+                  <FontAwesomeIcon icon={faGithub} color="#e0a800" style={{marginRight : "5px"}} />
+                  GitHub
+                </Nav.Link>
+                <Nav.Link bsPrefix="drop-down-link" href="https://www.linkedin.com/in/alex-chernous-34482236/" target="_blank" style={{transition : "0.15s", whiteSpace: "nowrap"}}>
+                  <FontAwesomeIcon icon={faLinkedin} color="#e0a800" style={{marginRight : "5px"}} />
+                  LinkedIn
+                </Nav.Link>
+              </NavDropdown>
+
+              <Nav.Link eventKey="4" as={Link} to="/about" style={{transition : "0.15s", whiteSpace: "nowrap"}}>
                 <FontAwesomeIcon icon={faUser} color="#e0a800" style={{marginRight : "5px"}} />
                 About me
               </Nav.Link>
@@ -87,11 +104,6 @@ class Header extends Component {
               <Button variant="warning" ref={this.loginRef}>Login</Button>
             </LinkContainer>
           }
-          <Overlay target={this.state.login} placement="bottom" show={!this.props.isLoggedIn} >
-            <Tooltip id="overlay-example">
-              Try logging in!
-            </Tooltip>
-          </Overlay>
         </div>
       
       </div>

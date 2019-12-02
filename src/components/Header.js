@@ -92,7 +92,7 @@ class Header extends Component {
         </Navbar>
 
         {/* make into its own component */}
-        <div style={{padding : "0px 16px 0px 0px", background : "rgb(52, 58, 64)", display : "flex", alignItems : "center", justifyContent : "right", width : "100%"}}>
+        <div style={{padding : "0px 16px 0px 0px", background : "rgb(52, 58, 64)", display : "flex", alignItems : "center", flexDirection : "row-reverse", width : "100%"}}>
           <LoginMessage userName={this.props.userName} />
           {this.props.isLoggedIn && 
               <LinkContainer to="/logout">

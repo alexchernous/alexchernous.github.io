@@ -1,12 +1,26 @@
 import React, { Component } from "react";
+import ReactMarkdown from "react-markdown";
+import mdfile from "../content/AboutMe.md";
 
 class AboutMe extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      file : null,
+    };
+
+  }
+  componentDidMount() {
+    fetch(mdfile).then((r) => r.text()).then(text  => {
+      this.setState({ file : text });
+    });
+  }
 
   render() {
     return (
-      <div style={{margin : "10px"}}>
-        <p>Studied: Computer Science and Linguistics</p>
-        <p>Pursuing jobs in: Software Engineering, UX, and AI.</p>
+      <div style={{padding : "20px"}}>
+        <ReactMarkdown source={this.state.file} escapeHtml={false} />
       </div>
     ); 
   }

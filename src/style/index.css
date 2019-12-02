@@ -1,4 +1,5 @@
 html, body {
+  background: rgb(52, 58, 64, 0.1);
   margin: 0px;
   padding: 0px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -8,6 +9,10 @@ html, body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  background : rgb(52, 58, 64, 0.1);
 }
 
 code {
@@ -26,6 +31,25 @@ code {
   height: 0;
   width: 0;
   position: absolute;
+}
+
+.drop-down-link {
+  display: block;
+  padding: 5px 14px;
+  color: rgba(255, 255, 255, .5);
+}
+
+.drop-down-link:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, .75);
+}
+
+.dropdown-menu.show {
+  background: #343a40;
+  border: 0px;
+  min-width: 0px;
+  text-align: left;
+  justify-content: right;
 }
 
 .colorTester {

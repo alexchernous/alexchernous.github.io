@@ -16,17 +16,25 @@ export const appDefaultThemes = {
   },
   // when making focus borders, remember to have the same unfocused dimensions
   // otherwise html elements will move around
+
+  //longhand property names due to radium warnings
   inputStyle : { 
     boxShadow: "none",
-    border: "1px solid rgba(0, 0, 0, 0.1)",
-    borderBottom: "3px solid rgba(0, 0, 0, 0.1)",
+    borderWidth: "1px",
+    borderStyle: "solid",
+    borderColor: "rgba(0, 0, 0, 0.1)",
+    borderBottomWidth: "3px",
+    borderBottomStyle: "solid",
+    borderBottomColor: "rgba(0, 0, 0, 0.1)",
     borderRadius: "4px",
     margin: "0px",
     padding: "10px",
     width: "90%",
     display: "grid",
     ":focus": {
-      borderBottom: "3px solid rgba(233, 188, 40, 0.9)",
+      borderBottomWidth: "3px",
+      borderBottomStyle: "solid",
+      borderBottomColor: "rgba(233, 188, 40, 0.9)",
     }
   },
   buttonBase : {
@@ -41,8 +49,11 @@ export const appDefaultThemes = {
     width: "50%",
     height: "50px",
     backgroundColor: "rgb(212, 173, 45)",
-    border: "0px solid black",
+    borderWidth: "0px",
+    borderStyle: "solid",
+    borderColor: "black",
     borderRadius: "4px",
+    transition: "0.15s",
     ":hover": {
       backgroundColor: "rgba(233, 188, 40, 0.9)",
       // boxShadow: "inset 0 0 0px 2px rgb(212, 173, 45)"
@@ -52,7 +63,9 @@ export const appDefaultThemes = {
     width: "100px",
     height: "100%",
     backgroundColor: "white",
-    border: "1px solid black",
+    borderWidth: "1px",
+    borderStyle: "solid",
+    borderColor: "black",
     ":hover": {
       backgroundColor: "#204d17"
     }

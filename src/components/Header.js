@@ -93,7 +93,6 @@ class Header extends Component {
 
         {/* make into its own component */}
         <div style={{padding : "0px 16px 0px 0px", background : "rgb(52, 58, 64)", display : "flex", alignItems : "center", flexDirection : "row-reverse", width : "100%"}}>
-          <LoginMessage userName={this.props.userName} />
           {this.props.isLoggedIn && 
               <LinkContainer to="/logout">
                 <Button variant="danger" onClick={this.handleLogout}>Logout</Button>
@@ -104,6 +103,7 @@ class Header extends Component {
               <Button variant="warning" ref={this.loginRef}>Login</Button>
             </LinkContainer>
           }
+          <LoginMessage userName={this.props.userName} />
         </div>
       
       </div>

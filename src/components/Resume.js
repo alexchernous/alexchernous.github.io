@@ -14,8 +14,6 @@ class Resume extends Component {
     this.state = {
       numPages : null,
       pageNumber : 1,
-      firstPage : true,
-      finalPage : false
     };
 
     this.onDocumentLoadSuccess = this.onDocumentLoadSuccess.bind(this);
@@ -40,21 +38,15 @@ class Resume extends Component {
 
   // disabling button only works on extra click...
   handleNext() {
-    if (this.state.pageNumber < 3) {
-      this.setState((state) => ({pageNumber : state.pageNumber + 1, firstPage : false}));
-    }
-    else {
-      this.setState({finalPage : true});
+    if (this.state.pageNumber < this.state.numPages) {
+      this.setState((state) => ({pageNumber : state.pageNumber + 1}));
     }
       
   }
 
   handlePrevious() {
     if (this.state.pageNumber > 1) {
-      this.setState((state) => ({pageNumber : state.pageNumber - 1, finalPage : false}));
-    }
-    else {
-      this.setState({firstPage : true});
+      this.setState((state) => ({pageNumber : state.pageNumber - 1}));
     }
   }
 

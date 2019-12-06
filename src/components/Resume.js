@@ -63,7 +63,6 @@ class Resume extends Component {
           download="AlexChernousResume.pdf"
           style={{
             marginBottom: "5px",
-            textAlign: "left"
             }}>
             Download Resume
         </a>

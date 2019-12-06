@@ -40,7 +40,6 @@ class App extends Component {
               <Route path="/about" component={AboutMe} />
               <Route path="/login" render={() => <Login login={this.login} />} />
               <Redirect exact from="/" to="/home" />
-              <Redirect exact from="/logout" to="/" />
             </Switch>
           </Router>
       );

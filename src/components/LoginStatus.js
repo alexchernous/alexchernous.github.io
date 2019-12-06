@@ -24,7 +24,7 @@ class LoginStatus extends Component {
         }}>
 
         {this.props.isLoggedIn &&
-          <LinkContainer to="/logout">
+          <LinkContainer to="/">
             <Button
               variant="danger"
               onClick={this.handleLogout}>

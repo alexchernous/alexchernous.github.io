@@ -80,8 +80,18 @@ class Login extends Component {
           width: "100%"
           }}
       >
-        <h1 style={{marginTop: "50px", fontWeight: "700", fontSize: "40px"}}>Login</h1>
-        <h3 style={{fontWeight: "100"}}>Enter your dummy credentials below</h3>
+        <h1 style={{
+          marginTop: "50px",
+          fontWeight: "700",
+          fontSize: "40px"
+          }}>
+            Login
+        </h1>
+        <h3 style={{
+          fontWeight: "100"
+          }}>
+            Enter your dummy credentials below
+        </h3>
 
         <form
           ref={this.loginForm}

@@ -1,3 +1,2 @@
 ### Current issues
-1. Logout button 404s
-2. Refreshing page 404s
+1. Refreshing page 404s: https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually

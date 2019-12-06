@@ -116,7 +116,7 @@ class Header extends Component {
                 </Nav.Link>
                 <Nav.Link
                   bsPrefix="drop-down-link"
-                  href="https://www.linkedin.com/in/alex-chernous-34482236/"
+                  href="https://www.linkedin.com/in/alexchernous/"
                   target="_blank"
                   style={{
                     transition: "0.15s",

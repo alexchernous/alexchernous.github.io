@@ -6,9 +6,9 @@ This website acts as my portfolio. I built it using common JavaScript frameworks
 
 ### What did I use?
 
-<p>I put this together with <a href="https://reactjs.org/" target="_blank">React.js</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap.js</a>.</p>
+<p>I put this together with <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React.js</a> and <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap.js</a>.</p>
 
-<p>Most of the components you see (<code>buttons</code>, <code>headers</code>, <code>links</code> etc.) are Bootstrap (<a href="https://react-bootstrap.github.io/" target="_blank">react-bootstrap</a>) with the exception of the login page.</br>If you'd like to see my own styling done from scratch please press the <b>Login</b> button at the top right of the screen.</p>
+<p>Most of the components you see (<code>buttons</code>, <code>headers</code>, <code>links</code> etc.) are Bootstrap (<a href="https://react-bootstrap.github.io/" target="_blank" rel="noopener noreferrer">react-bootstrap</a>) with the exception of the login page.</br>If you'd like to see my own styling done from scratch please press the <b>Login</b> button at the top right of the screen.</p>
 
 ---
 
@@ -18,7 +18,7 @@ This website acts as my portfolio. I built it using common JavaScript frameworks
 This 'Home' page component acts as a little introduction and outline.
 
 ##### Projects
-<p>'Projects' page is a component designed to hold some of <a href="https://github.com/alexchernous" target="_blank">my GitHub</a> activities.<p>
+<p>'Projects' page is a component designed to hold some of <a href="https://github.com/alexchernous" target="_blank" rel="noopener noreferrer">my GitHub</a> activities.<p>
 
 ##### Resume
 In 'Resume' you'll find my up to date CV.

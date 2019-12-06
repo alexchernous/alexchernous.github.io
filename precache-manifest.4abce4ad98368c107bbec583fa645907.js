@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "29d0a599a48b4293fc46026ee41ef898",
+    "revision": "989d83914b30f452dac31e748ff71369",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.0624914a.chunk.css"
   },
   {
-    "revision": "6e01981a7709c19bc983",
+    "revision": "70ebdf0cc7ef49ad1abb",
     "url": "/static/css/main.41823805.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.903fb4eb.chunk.js"
   },
   {
-    "revision": "6e01981a7709c19bc983",
-    "url": "/static/js/main.03b760a7.chunk.js"
+    "revision": "70ebdf0cc7ef49ad1abb",
+    "url": "/static/js/main.e629c7f8.chunk.js"
   },
   {
     "revision": "216030cd1ab33a8a8bbc",
@@ -32,7 +32,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/AlexChernousResume.4ce40ec3.pdf"
   },
   {
-    "revision": "2c75831a65930daa4861ea1d32dab82d",
-    "url": "/static/media/Home.2c75831a.md"
+    "revision": "b9dfaaff598b6188a3cefcc6cb23aef9",
+    "url": "/static/media/Home.b9dfaaff.md"
   }
 ]);

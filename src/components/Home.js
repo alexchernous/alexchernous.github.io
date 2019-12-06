@@ -19,7 +19,10 @@ class Home extends Component {
 
   render() {
     return (
-      <div style={{padding: "20px"}}>
+      <div style={{
+        padding: "20px"
+        }}>
+
         <ReactMarkdown source={this.state.file} escapeHtml={false} />
       </div>
     );

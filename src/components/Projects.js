@@ -16,7 +16,7 @@ class Projects extends Component {
         <p>Single word and sentence prediction from a statistical language model using a 2nd order (and 1st order where applicable) <b>Markov Model</b> approach.</p>
         <p>Using <b>Python</b> and supporting libraries like regex, math, and numpy. Literature used to train models: A Tale of Two Cities from Project Gutenberg.</p><br></br>
 
-        <h4><a href="https://github.com/alexchernous/website-react" target="_blank">Website Portfolio<FontAwesomeIcon icon={faLink} color="#e0a800" style={{marginLeft : "5px"}} /></a></h4>
+        <h4><a href="https://github.com/alexchernous/alexchernous.github.io/tree/source" target="_blank">Website Portfolio<FontAwesomeIcon icon={faLink} color="#e0a800" style={{marginLeft : "5px"}} /></a></h4>
         <p>This webpage you're on was put together to demonstrate primarily some React/Bootstrap knowledge and act as my personal portfolio.</p>
         <p>Using <b>React, Bootstrap,</b> other libraries that can be found in package.json on GitHub.</p><br></br>
 

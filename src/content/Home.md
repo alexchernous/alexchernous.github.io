@@ -12,7 +12,7 @@ This website acts as my portfolio. I built it using common JavaScript frameworks
 
 ---
 
-### Short explanation of pages
+### What are the pages about?
 
 ##### Home
 This 'Home' page component acts as a little introduction and outline.

@@ -6,7 +6,12 @@ class MyDropDown extends Component {
   render() {
     return (
       <React.Fragment>
-        <FontAwesomeIcon icon={faExternalLinkAlt} color="#e0a800" style={{marginRight : "5px"}} />
+        <FontAwesomeIcon
+          icon={faExternalLinkAlt}
+          color="#e0a800"
+          style={{
+            marginRight: "5px"
+            }} />
         My links
       </React.Fragment>
     );

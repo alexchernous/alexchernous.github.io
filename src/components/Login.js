@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import Radium from "radium";
-import CalloutContent from "./CalloutContent";
 import { appDefaultThemes } from "./theme-context";
 import { Redirect } from "react-router-dom";
 import { Overlay, Tooltip } from "react-bootstrap";
-
-// ThemeContext?
+import CalloutContent from "./CalloutContent";
 
 class Login extends Component {
   _isMounted = false;
@@ -20,7 +18,6 @@ class Login extends Component {
     };
 
     this.loginForm = React.createRef();
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.closeCallout = this.closeCallout.bind(this);
@@ -42,8 +39,8 @@ class Login extends Component {
 
   handleSubmit(event) {
     if (this._isMounted) {
-      this.setState({ redirectOnLogin : true });
-      this.props.updateLoginStatus(true, event.target.name.value);
+      this.setState({ redirectOnLogin: true });
+      this.props.login(true, event.target.name.value);
     }
 
     //prevents refresh
@@ -52,18 +49,17 @@ class Login extends Component {
 
   handleClick() {
     if (this._isMounted) {
-      this.setState({formPressed : true});
+      this.setState({formPressed: true});
     }
   }
 
   closeCallout() {
     if (this._isMounted) {
-      this.setState({formPressed : false});
+      this.setState({formPressed: false});
     }
   }
-  
-  render() {
 
+  render() {
     const text = "Form isn't a controlled component - want to avoid storing plain text info in state";
 
     const redirectOnLogin = this.state.redirectOnLogin;
@@ -72,10 +68,10 @@ class Login extends Component {
     }
 
     return(
-      <div 
+      <div
         style={{
-          display: "grid",  
-          justifyContent: "center", 
+          display: "grid",
+          justifyContent: "center",
           color: "black",
           textAlign: "center",
           margin: "0px",
@@ -87,9 +83,9 @@ class Login extends Component {
         <h1 style={{marginTop: "50px", fontWeight: "700", fontSize: "40px"}}>Login</h1>
         <h3 style={{fontWeight: "100"}}>Enter your dummy credentials below</h3>
 
-        <form 
-          ref={this.loginForm} 
-          onClick={this.handleClick} 
+        <form
+          ref={this.loginForm}
+          onClick={this.handleClick}
           onSubmit={this.handleSubmit}
           style={{
             height: "100%",
@@ -108,12 +104,12 @@ class Login extends Component {
             Password
             <input key="password" style={appDefaultThemes["inputStyle"]} type="password" placeholder="Password is required" required />
           </label>
-          <input 
+          <input
             style={
-              [appDefaultThemes["buttonBase"], appDefaultThemes["submit"]]} 
+              [appDefaultThemes["buttonBase"], appDefaultThemes["submit"]]}
             type="submit" value="Log me in"/>
         </form>
-        
+
         <Overlay target={this.state.form} show={this.state.formPressed} placement="bottom">
           <Tooltip id="overlay-example">
             <CalloutContent content={text} closeCallout={this.closeCallout} />
@@ -121,7 +117,6 @@ class Login extends Component {
         </Overlay>
       </div>
     );
-    
   }
 }
 

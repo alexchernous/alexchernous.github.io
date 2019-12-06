@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 class Projects extends Component {
 
   render() {
     return (
-      <div style={{padding : "20px"}}>
+      <div style={{
+        padding: "20px"
+        }}>
+
         <p>Most projects I play around with are on <a href="https://github.com/alexchernous" target="_blank">my GitHub</a>. However, currently with a full time commitment, it's more difficult to find the time for this hobby. Below are a few of my most enjoyed projects.</p><br></br>
 
         <h4><a href="https://github.com/alexchernous/NaturalLanguagePrediction" target="_blank">Natural Language Prediction<FontAwesomeIcon icon={faLink} color="#e0a800" style={{marginLeft : "5px"}} /></a></h4>
@@ -19,10 +22,9 @@ class Projects extends Component {
 
         <h4><a href="https://github.com/alexchernous/SentimentAnalysis" target="_blank">Sentiment Analysis<FontAwesomeIcon icon={faLink} color="#e0a800" style={{marginLeft : "5px"}} /></a></h4>
         <p>Rudimenatry sentiment analysis. <b>SVM Machine Learning</b> algorithm trained on synthetic sentences containing smile and frown emojis to gauge sentiment (positive, negative, neutral).</p>
-        <p>Using <b>Python</b> and its <b>Machine Learning</b> libraries.</p>       
+        <p>Using <b>Python</b> and its <b>Machine Learning</b> libraries.</p>
       </div>
-
-    ); 
+    );
   }
 }
 

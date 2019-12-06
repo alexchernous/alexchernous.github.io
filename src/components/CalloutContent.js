@@ -12,14 +12,27 @@ class CalloutContent extends Component {
   closeCallout() {
     this.props.closeCallout();
   }
-  
+
   render() {
     return (
-        <div style={{display : "flex", alignItems : "center"}}>
-          <span style={{color: "white"}}>
+        <div style={{
+          display: "flex",
+          alignItems: "center"
+          }}>
+
+          <span style={{
+            color: "white"
+            }}>
+
             {this.props.content}
           </span>
-          <FontAwesomeIcon icon={faTimesCircle} color="#ff6e6e" onClick={this.closeCallout} style={{margin: "5px"}} />
+          <FontAwesomeIcon
+            icon={faTimesCircle}
+            color="#ff6e6e"
+            onClick={this.closeCallout}
+            style={{
+              margin: "5px"
+              }} />
         </div>
     );
   }

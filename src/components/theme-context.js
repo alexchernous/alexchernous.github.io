@@ -14,8 +14,8 @@ export const appDefaultThemes = {
     fontSize: "20px",
     textAlign: "left"
   },
-  // when making focus borders, remember to have the same unfocused dimensions
-  // otherwise html elements will move around
+  //when making focus borders, remember to have the same unfocused dimensions
+  //otherwise html elements will move around
 
   //longhand property names due to radium warnings
   inputStyle : { 
@@ -59,17 +59,7 @@ export const appDefaultThemes = {
       // boxShadow: "inset 0 0 0px 2px rgb(212, 173, 45)"
     }
   },
-  menu : {
-    width: "100px",
-    height: "100%",
-    backgroundColor: "white",
-    borderWidth: "1px",
-    borderStyle: "solid",
-    borderColor: "black",
-    ":hover": {
-      backgroundColor: "#204d17"
-    }
-  }
 };
 
+//use for dark/light theme options in future
 export const ThemeContext = React.createContext();

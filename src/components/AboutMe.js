@@ -7,22 +7,26 @@ class AboutMe extends Component {
     super(props);
 
     this.state = {
-      file : null,
+      file: null,
     };
 
   }
+
   componentDidMount() {
     fetch(mdfile).then((r) => r.text()).then(text  => {
-      this.setState({ file : text });
+      this.setState({ file: text });
     });
   }
 
   render() {
     return (
-      <div style={{padding : "20px"}}>
+      <div style={{
+        padding: "20px"
+        }}>
+
         <ReactMarkdown source={this.state.file} escapeHtml={false} />
       </div>
-    ); 
+    );
   }
 }
 

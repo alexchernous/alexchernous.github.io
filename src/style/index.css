@@ -12,25 +12,12 @@ html, body {
 }
 
 #root {
-  background : rgb(52, 58, 64, 0.1);
+  background: rgb(52, 58, 64, 0.1);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.callout {
-  border-radius: 4px;
-  position: absolute;
-  padding: 5px;
-  z-index: 9999;
-}
-
-.callout-arrow {
-  height: 0;
-  width: 0;
-  position: absolute;
 }
 
 .drop-down-link {
@@ -50,10 +37,4 @@ code {
   min-width: 0px;
   text-align: left;
   justify-content: right;
-}
-
-.colorTester {
-  color: rgb(212, 173, 45);
-  color: rgba(233, 188, 40, 0.699);
-  color: rgba(0, 0, 0, 0.473);
 }

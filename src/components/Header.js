@@ -9,10 +9,6 @@ import MyDropDown from "./MyDropDown";
 import LoginStatus from "./LoginStatus";
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   //consider using map() to create the nav links and fontawesome icons
   render() {
     return (

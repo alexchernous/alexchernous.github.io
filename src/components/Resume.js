@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 import { Document, Page, pdfjs } from "react-pdf";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import resumePDF from "../content/AlexChernousResume.pdf";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -12,19 +14,21 @@ class Resume extends Component {
     this.state = {
       numPages: null,
       pageNumber: 1,
+      scale: 1.0,
     };
 
     this.onDocumentLoadSuccess = this.onDocumentLoadSuccess.bind(this);
+    this.onPageLoadSuccess = this.onPageLoadSuccess.bind(this);
     this.handleNext = this.handleNext.bind(this);
     this.handlePrevious = this.handlePrevious.bind(this);
   }
 
-  onDocumentLoadSuccess = ({ numPages }) => {
+  onDocumentLoadSuccess({ numPages }) {
     this.setState({ numPages });
   }
 
-  // https://github.com/wojtekmaj/react-pdf/issues/332#issuecomment-458121654
-  removeTextLayerOffset() {
+  onPageLoadSuccess(page) {
+    // https://github.com/wojtekmaj/react-pdf/issues/332#issuecomment-458121654
     const textLayers = document.querySelectorAll(".react-pdf__Page__textContent");
     textLayers.forEach(layer => {
       const { style } = layer;
@@ -32,6 +36,20 @@ class Resume extends Component {
       style.left = "0";
       style.transform = "";
     });
+
+    // https://github.com/wojtekmaj/react-pdf/issues/74
+    const parentDiv = document.querySelector('#pdfDoc');
+
+    if (parentDiv.clientWidth > 750) {
+      this.setState({ scale: 1.2 });
+    }
+    else{
+      let pageScale = parentDiv.clientWidth / page.originalWidth;
+
+      if (this.state.scale !== pageScale) {
+        this.setState({ scale: pageScale });
+      }
+    }
   }
 
   // disabling button only works on extra click...
@@ -39,7 +57,6 @@ class Resume extends Component {
     if (this.state.pageNumber < this.state.numPages) {
       this.setState((state) => ({pageNumber: state.pageNumber + 1}));
     }
-
   }
 
   handlePrevious() {
@@ -50,48 +67,66 @@ class Resume extends Component {
 
   render() {
     return (
-      <div style={{
-        marginTop: "5px",
-        display: "grid",
-        justifyContent: "center",
-        textAlign: "center",
-        width: "100%",
-        }}>
+      <div id="pdfDoc"
+        style={{
+          display: "grid",
+          justifyContent: "center",
+          textAlign: "center"
+          }}>
 
         <a
           href={resumePDF}
-          download="AlexChernousResume.pdf"
-          style={{
-            marginBottom: "5px",
-            }}>
-            Download Resume
+          download="AlexChernousResume.pdf">
+          <Button
+            variant="success"
+            style={{
+              width: "50%",
+              height: "50px",
+              marginBottom: "10px",
+              marginTop: "10px"
+              }}>
+              <FontAwesomeIcon
+                icon={faDownload}
+                color="#e0a800"
+                style={{
+                  marginRight: "5px",
+                  transition: "0.15s"
+                  }} />
+                Download Resume
+          </Button>
         </a>
 
         <Document file={resumePDF} onLoadSuccess={this.onDocumentLoadSuccess}>
-          <Page onLoadSuccess={() => this.removeTextLayerOffset()} pageNumber={this.state.pageNumber} />
+          <Page
+            onLoadSuccess={this.onPageLoadSuccess}
+            pageNumber={this.state.pageNumber}
+            scale={this.state.scale} />
         </Document>
 
         <div style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
-          gridGap: "10px",
-          marginTop: "10px",
-          borderTop: "1px solid rgb(52, 58, 64, 0.1)"
+          gridGap: "5px",
+          marginBottom: "10px",
           }}>
 
           <Button
             variant="secondary"
             onClick={this.handlePrevious}
-            style={{width: "100%"}}>
+            style={{
+              width: "100%",
+              transition: "0.15s",
+              }}>
               Previous Page
           </Button>
           <Button
             variant="secondary"
             onClick={this.handleNext}
             style={{
-              width: "100%"
+              width: "100%",
+              transition: "0.15s",
               }}>
-                Next Page
+              Next Page
           </Button>
         </div>
       </div>

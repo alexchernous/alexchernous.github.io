@@ -1,4 +1,6 @@
 html, body {
+  height: 100%;
+  width: 100%;
   background: rgb(52, 58, 64, 0.1);
   margin: 0px;
   padding: 0px;
@@ -11,6 +13,8 @@ html, body {
 }
 
 #root {
+  height: 100%;
+  width: 100%;
   background: #eaeaeb;
 }
 

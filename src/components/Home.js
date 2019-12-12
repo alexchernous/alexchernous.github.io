@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Accordion, Card, Button } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
 import mdfile from "../content/Home.md";
 

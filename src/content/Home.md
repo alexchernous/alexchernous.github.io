@@ -27,4 +27,4 @@ In 'Resume' you'll find my up to date CV.
 'About me' will give a brief summary of my goals and interests as it relates to my career.
 
 ##### Login
-The 'Login' page is a pseudo working signin for my website that showcases React concepts such as `state` and `prop`. If you enter a dummy name and password, your name will appear at the top of the banner replacing "anonymous". The button will be replaced with a Logout equivalent. It also demonstrates my own styling (no Bootstrap). But in most cases I'd leave the styling to UI designers.
+The 'Login' page is a pseudo working signin for my website that showcases React concepts such as `state` and `prop`. If you enter a dummy name and password, your name will appear at the top of the banner replacing "user". The button will be replaced with a Logout equivalent. It also demonstrates my own styling (no Bootstrap). But in most cases I'd leave the styling to UI designers.

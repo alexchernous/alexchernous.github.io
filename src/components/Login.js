@@ -40,7 +40,7 @@ class Login extends Component {
   handleSubmit(event) {
     if (this._isMounted) {
       this.setState({ redirectOnLogin: true });
-      this.props.login(true, event.target.name.value);
+      this.props.login(event.target.name.value);
     }
 
     //prevents refresh

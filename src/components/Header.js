@@ -8,148 +8,148 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import MyDropDown from "./MyDropDown";
 
 class Header extends Component {
-  //consider using map() to create the nav links and fontawesome icons
-  render() {
-    return (
-      <Navbar
-        bg="dark"
-        variant="dark"
-        expand="md"
-        collapseOnSelect
-        style={{
-          width: "100%"
-          }}>
-
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <LinkContainer to="/">
-            <Navbar.Brand>
-              <FontAwesomeIcon
-                icon={faRocket}
-                color="#e0a800"
+    //consider using map() to create the nav links and fontawesome icons
+    render() {
+        return (
+            <Navbar
+                bg="dark"
+                variant="dark"
+                expand="md"
+                collapseOnSelect
                 style={{
-                  fontSize: "35px"
-                  }} />
-
-            </Navbar.Brand>
-          </LinkContainer>
-          <Nav className="mr-auto">
-            <Nav.Link
-              eventKey="1"
-              as={Link}
-              to="/"
-              style={{
-                transition: "0.15s",
-                whiteSpace: "nowrap"
+                    width: "100%"
                 }}>
 
-              <FontAwesomeIcon
-                icon={faHome}
-                color="#e0a800"
-                style={{
-                  marginRight: "5px"
-                  }} />
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <LinkContainer to="/">
+                        <Navbar.Brand>
+                            <FontAwesomeIcon
+                                icon={faRocket}
+                                color="#e0a800"
+                                style={{
+                                    fontSize: "35px"
+                                }} />
 
-              Home
+                        </Navbar.Brand>
+                    </LinkContainer>
+                    <Nav className="mr-auto">
+                        <Nav.Link
+                            eventKey="1"
+                            as={Link}
+                            to="/"
+                            style={{
+                                transition: "0.15s",
+                                whiteSpace: "nowrap"
+                            }}>
+
+                            <FontAwesomeIcon
+                                icon={faHome}
+                                color="#e0a800"
+                                style={{
+                                    marginRight: "5px"
+                                }} />
+
+                            Home
             </Nav.Link>
-            <Nav.Link
-              eventKey="2"
-              as={Link}
-              to="/projects"
-              style={{
-                transition: "0.15s",
-                whiteSpace: "nowrap"
-                }}>
+                        <Nav.Link
+                            eventKey="2"
+                            as={Link}
+                            to="/projects"
+                            style={{
+                                transition: "0.15s",
+                                whiteSpace: "nowrap"
+                            }}>
 
-              <FontAwesomeIcon
-                icon={faProjectDiagram}
-                color="#e0a800"
-                style={{
-                  marginRight: "5px"
-                  }} />
+                            <FontAwesomeIcon
+                                icon={faProjectDiagram}
+                                color="#e0a800"
+                                style={{
+                                    marginRight: "5px"
+                                }} />
 
-              Projects
+                            Projects
             </Nav.Link>
-            <Nav.Link
-              eventKey="3"
-              as={Link}
-              to="/resume"
-              style={{
-                transition: "0.15s",
-                whiteSpace: "nowrap"
-                }}>
+                        <Nav.Link
+                            eventKey="3"
+                            as={Link}
+                            to="/resume"
+                            style={{
+                                transition: "0.15s",
+                                whiteSpace: "nowrap"
+                            }}>
 
-              <FontAwesomeIcon
-                icon={faFile}
-                color="#e0a800"
-                style={{
-                  marginRight: "5px"
-                  }} />
+                            <FontAwesomeIcon
+                                icon={faFile}
+                                color="#e0a800"
+                                style={{
+                                    marginRight: "5px"
+                                }} />
 
-              Resume
+                            Resume
             </Nav.Link>
 
-            <NavDropdown title={<MyDropDown />}>
-              <Nav.Link
-                bsPrefix="drop-down-link"
-                href="https://github.com/alexchernous"
-                target="_blank"
-                style={{
-                  transition: "0.15s",
-                  whiteSpace: "nowrap"
-                  }}>
+                        <NavDropdown title={<MyDropDown />}>
+                            <Nav.Link
+                                bsPrefix="drop-down-link"
+                                href="https://github.com/alexchernous"
+                                target="_blank"
+                                style={{
+                                    transition: "0.15s",
+                                    whiteSpace: "nowrap"
+                                }}>
 
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  color="#e0a800"
-                  style={{
-                    marginRight: "5px"
-                    }} />
+                                <FontAwesomeIcon
+                                    icon={faGithub}
+                                    color="#e0a800"
+                                    style={{
+                                        marginRight: "5px"
+                                    }} />
 
-                GitHub
+                                GitHub
               </Nav.Link>
-              <Nav.Link
-                bsPrefix="drop-down-link"
-                href="https://www.linkedin.com/in/alexchernous/"
-                target="_blank"
-                style={{
-                  transition: "0.15s",
-                  whiteSpace: "nowrap"
-                  }}>
+                            <Nav.Link
+                                bsPrefix="drop-down-link"
+                                href="https://www.linkedin.com/in/alexchernous/"
+                                target="_blank"
+                                style={{
+                                    transition: "0.15s",
+                                    whiteSpace: "nowrap"
+                                }}>
 
-                <FontAwesomeIcon
-                  icon={faLinkedin}
-                  color="#e0a800"
-                  style={{
-                    marginRight: "5px"
-                    }} />
+                                <FontAwesomeIcon
+                                    icon={faLinkedin}
+                                    color="#e0a800"
+                                    style={{
+                                        marginRight: "5px"
+                                    }} />
 
-                LinkedIn
+                                LinkedIn
               </Nav.Link>
-            </NavDropdown>
-            <Nav.Link
-              eventKey="4"
-              as={Link}
-              to="/about"
-              style={{
-                transition: "0.15s",
-                whiteSpace: "nowrap"
-                }}>
+                        </NavDropdown>
+                        <Nav.Link
+                            eventKey="4"
+                            as={Link}
+                            to="/about"
+                            style={{
+                                transition: "0.15s",
+                                whiteSpace: "nowrap"
+                            }}>
 
-              <FontAwesomeIcon
-                icon={faUser}
-                color="#e0a800"
-                style={{
-                  marginRight: "5px"
-                  }} />
+                            <FontAwesomeIcon
+                                icon={faUser}
+                                color="#e0a800"
+                                style={{
+                                    marginRight: "5px"
+                                }} />
 
-              About me
+                            About me
             </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    );
-  }
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
+        );
+    }
 }
 
 export default Header;

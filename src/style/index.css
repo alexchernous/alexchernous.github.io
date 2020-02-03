@@ -1,43 +1,40 @@
 html, body {
-  height: 100%;
-  width: 100%;
-  background: rgb(52, 58, 64, 0.1);
-  margin: 0px;
-  padding: 0px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+    width: 100%;
+    background: rgb(52, 58, 64, 0.1);
+    margin: 0px;
+    padding: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
-  height: 100%;
-  width: 100%;
-  background: #eaeaeb;
+    height: 100%;
+    width: 100%;
+    background: #eaeaeb;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .drop-down-link {
-  display: block;
-  padding: 5px 14px;
-  color: rgba(255, 255, 255, .5);
+    display: block;
+    padding: 5px 14px;
+    color: rgba(255, 255, 255, .5);
 }
 
 .drop-down-link:hover {
-  text-decoration: none;
-  color: rgba(255, 255, 255, .75);
+    text-decoration: none;
+    color: rgba(255, 255, 255, .75);
 }
 
 .dropdown-menu.show {
-  background: #343a40;
-  border: 0px;
-  min-width: 0px;
-  text-align: left;
-  justify-content: right;
+    background: #343a40;
+    border: 0px;
+    min-width: 0px;
+    text-align: left;
+    justify-content: right;
 }

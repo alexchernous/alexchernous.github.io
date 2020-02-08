@@ -92,7 +92,7 @@ class Resume extends Component {
                   marginRight: "5px",
                   transition: "0.15s"
                   }} />
-                Download Resume
+                Download Resume PDF
           </Button>
         </a>
 

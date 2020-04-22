@@ -1,6 +1,8 @@
-import React, { Component } from "react";
-import ReactMarkdown from "react-markdown";
-import mdfile from "../content/AboutMe.md";
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+import React, { Component } from 'react';
+import ReactMarkdown from 'react-markdown';
+import mdfile from '../content/AboutMe.md';
 
 class AboutMe extends Component {
   constructor(props) {
@@ -9,11 +11,10 @@ class AboutMe extends Component {
     this.state = {
       file: null,
     };
-
   }
 
   componentDidMount() {
-    fetch(mdfile).then((r) => r.text()).then(text  => {
+    fetch(mdfile).then((r) => r.text()).then((text) => {
       this.setState({ file: text });
     });
   }
@@ -21,8 +22,8 @@ class AboutMe extends Component {
   render() {
     return (
       <div style={{
-        padding: "20px"
-        }}>
+        padding: '20px',
+      }}>
 
         <ReactMarkdown source={this.state.file} escapeHtml={false} />
       </div>

@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import { LinkContainer } from "react-router-bootstrap";
-import { Button } from "react-bootstrap";
+/* eslint-disable no-unused-vars */
+import React, { Component } from 'react';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Button } from 'react-bootstrap';
 
 class LoginStatus extends Component {
   constructor(props) {
@@ -13,36 +14,34 @@ class LoginStatus extends Component {
   }
 
   render() {
-    return(
+    return (
       <div style={{
-        padding: "0px 16px 0px 0px",
-        background: "rgb(52, 58, 64)",
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "row-reverse",
-        width: "100%"
-        }}>
+        padding: '0px 16px 0px 0px',
+        background: 'rgb(52, 58, 64)',
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'row-reverse',
+        width: '100%',
+      }}>
 
-        {this.props.isLoggedIn &&
-          <LinkContainer to="/">
-            <Button
-              variant="danger"
-              onClick={this.handleLogout}>
-                Logout
+        {this.props.isLoggedIn
+        && <LinkContainer to='/'>
+            <Button variant='danger' onClick={this.handleLogout}>
+              Logout
             </Button>
           </LinkContainer>
         }
-        {!this.props.isLoggedIn &&
-          <LinkContainer to="/login">
-            <Button variant="warning">Login</Button>
+        {!this.props.isLoggedIn
+        && <LinkContainer to='/login'>
+            <Button variant='warning'>Login</Button>
           </LinkContainer>
         }
 
         <p style={{
-          color: "white",
-          padding: "8px",
-          margin: "0px"
-          }}>
+          color: 'white',
+          padding: '8px',
+          margin: '0px',
+        }}>
 
           Hi, {this.props.userName}!
         </p>

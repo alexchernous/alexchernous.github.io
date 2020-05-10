@@ -21,8 +21,8 @@ class Resume extends Component {
 
     this.onDocumentLoadSuccess = this.onDocumentLoadSuccess.bind(this);
     this.onPageLoadSuccess = this.onPageLoadSuccess.bind(this);
-    this.handleNext = this.handleNext.bind(this);
-    this.handlePrevious = this.handlePrevious.bind(this);
+    // this.handleNext = this.handleNext.bind(this);
+    // this.handlePrevious = this.handlePrevious.bind(this);
   }
 
   onDocumentLoadSuccess({ numPages }) {
@@ -54,17 +54,17 @@ class Resume extends Component {
   }
 
   // disabling button only works on extra click...
-  handleNext() {
-    if (this.state.pageNumber < this.state.numPages) {
-      this.setState((state) => ({ pageNumber: state.pageNumber + 1 }));
-    }
-  }
+  // handleNext() {
+  //   if (this.state.pageNumber < this.state.numPages) {
+  //     this.setState((state) => ({ pageNumber: state.pageNumber + 1 }));
+  //   }
+  // }
 
-  handlePrevious() {
-    if (this.state.pageNumber > 1) {
-      this.setState((state) => ({ pageNumber: state.pageNumber - 1 }));
-    }
-  }
+  // handlePrevious() {
+  //   if (this.state.pageNumber > 1) {
+  //     this.setState((state) => ({ pageNumber: state.pageNumber - 1 }));
+  //   }
+  // }
 
   render() {
     return (
@@ -97,7 +97,7 @@ class Resume extends Component {
             pageNumber={this.state.pageNumber} scale={this.state.scale} />
         </Document>
 
-        <div style={{
+        {/* <div style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           gridGap: '5px',
@@ -118,7 +118,7 @@ class Resume extends Component {
             }}>
             Next Page
           </Button>
-        </div>
+        </div> */}
       </div>
     );
   }

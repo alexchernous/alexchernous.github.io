@@ -59,7 +59,7 @@ class App extends Component {
           <Route path='/projects' component={Projects} />
           <Route path='/resume' component={Resume} />
           <Route path='/about' component={AboutMe} />
-          <Route path='/login' render={() => <Login login={this.login} />} />
+          {/* <Route path='/login' render={() => <Login login={this.login} />} /> */}
         </Switch>
       </HashRouter>
     );

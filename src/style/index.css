@@ -38,3 +38,8 @@ code {
     text-align: left;
     justify-content: right;
 }
+
+.MuiGrid-container {
+  width: 100% !important;
+  margin: 0 !important;
+}

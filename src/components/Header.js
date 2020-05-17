@@ -13,6 +13,8 @@ import MyDropDown from './MyDropDown';
 class Header extends Component {
   // consider using map() to create the nav links and fontawesome icons
   render() {
+    const highlightColor = '#E09E3B';
+
     return (
       <Navbar
         bg='dark'variant='dark' expand='md' collapseOnSelect
@@ -22,11 +24,11 @@ class Header extends Component {
 
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
-          <LinkContainer to='/'>
+          <LinkContainer to='/projects'>
             <Navbar.Brand>
               <FontAwesomeIcon
                 icon={faRocket}
-                color='#e0a800'
+                color={highlightColor}
                 style={{
                   fontSize: '35px',
                 }} />
@@ -34,37 +36,25 @@ class Header extends Component {
             </Navbar.Brand>
           </LinkContainer>
           <Nav className='mr-auto'>
-            <Nav.Link eventKey='1' as={Link} to='/'
+            <Nav.Link eventKey='1' as={Link} to='/projects'
               style={{
                 transition: '0.15s',
                 whiteSpace: 'nowrap',
               }}>
 
-              <FontAwesomeIcon icon={faHome} color='#e0a800'
-                style={{
-                  marginRight: '5px',
-                }} />
-                Home
-            </Nav.Link>
-            <Nav.Link eventKey='2' as={Link} to='/projects'
-              style={{
-                transition: '0.15s',
-                whiteSpace: 'nowrap',
-              }}>
-
-              <FontAwesomeIcon icon={faProjectDiagram} color='#e0a800'
+              <FontAwesomeIcon icon={faProjectDiagram} color={highlightColor}
                 style={{
                   marginRight: '5px',
                 }} />
                 Projects
             </Nav.Link>
-            <Nav.Link eventKey='3' as={Link} to='/resume'
+            <Nav.Link eventKey='2' as={Link} to='/resume'
               style={{
                 transition: '0.15s',
                 whiteSpace: 'nowrap',
               }}>
 
-              <FontAwesomeIcon icon={faFile} color='#e0a800'
+              <FontAwesomeIcon icon={faFile} color={highlightColor}
                 style={{
                   marginRight: '5px',
                 }} />
@@ -78,7 +68,7 @@ class Header extends Component {
                   whiteSpace: 'nowrap',
                 }}>
 
-                <FontAwesomeIcon icon={faGithub} color='#e0a800'
+                <FontAwesomeIcon icon={faGithub} color={highlightColor}
                   style={{
                     marginRight: '5px',
                   }} />
@@ -90,20 +80,20 @@ class Header extends Component {
                   whiteSpace: 'nowrap',
                 }}>
 
-                <FontAwesomeIcon icon={faLinkedin} color='#e0a800'
+                <FontAwesomeIcon icon={faLinkedin} color={highlightColor}
                   style={{
                     marginRight: '5px',
                   }} />
                   LinkedIn
               </Nav.Link>
             </NavDropdown>
-            <Nav.Link eventKey='4' as={Link} to='/about'
+            <Nav.Link eventKey='3' as={Link} to='/about'
               style={{
                 transition: '0.15s',
                 whiteSpace: 'nowrap',
               }}>
 
-              <FontAwesomeIcon icon={faUser} color='#e0a800'
+              <FontAwesomeIcon icon={faUser} color={highlightColor}
                 style={{
                   marginRight: '5px',
                 }} />

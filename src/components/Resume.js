@@ -67,6 +67,8 @@ class Resume extends Component {
   // }
 
   render() {
+    const highlightColor = '#E09E3B';
+
     return (
       <div id='pdfDoc'
         style={{
@@ -83,7 +85,7 @@ class Resume extends Component {
               marginBottom: '10px',
               marginTop: '10px',
             }}>
-            <FontAwesomeIcon icon={faDownload} color='#e0a800'
+            <FontAwesomeIcon icon={faDownload} color={highlightColor}
               style={{
                 marginRight: '5px',
                 transition: '0.15s',

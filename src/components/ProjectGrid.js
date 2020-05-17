@@ -6,128 +6,193 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { faReact, faAndroid, faPython } from '@fortawesome/free-brands-svg-icons';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+// import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    paddingTop: '8px',
   },
   paper: {
     padding: theme.spacing(2),
     textAlign: 'left',
-    color: theme.palette.text.secondary,
+    color: '#b6b8bb',
     margin: 'auto',
+    backgroundColor: '#343a40',
   },
   img: {
     margin: 'auto',
     display: 'block',
     fontSize: '100px',
   },
+  visual: {
+    textAlign: 'center',
+  },
 }));
 
 export default function ProjectGrid() {
   const classes = useStyles();
   const highlightColor = '#E09E3B';
-  const xsSizeItem = 7;
-  // const xsSizeRow = 10;
+  const xsNumGridsItem = 12;
+  const mdNumGridsItem = 8;
+  const lgNumGridsItem = 7;
   const spacing = 2;
-  const rowJustify = 'center';
 
   return (
-    <div className={classes.root} spacing={0}>
-      <Grid container spacing={spacing} justify={rowJustify}>
-        <Grid item xs={xsSizeItem}>
+    <div className={classes.root}>
+      <Grid container spacing={spacing} justify='center' direction='row'>
+        <Grid item xs={xsNumGridsItem} md={mdNumGridsItem} lg={lgNumGridsItem}>
           <Paper className={classes.paper}>
             <Grid container spacing={spacing}>
-              <Grid item>
-                <a href='https://github.com/alexchernous/alexchernous.github.io/tree/source' target='_blank' rel='noopener noreferrer'>
-                  <FontAwesomeIcon icon={faReact} color={highlightColor} className={classes.img} />
-                </a>
+              <Grid item className={classes.visual}>
+                <Grid item>
+                  <a href='https://github.com/alexchernous/alexchernous.github.io/tree/source' target='_blank' rel='noopener noreferrer'>
+                    <FontAwesomeIcon icon={faReact} color={highlightColor}
+                      className={classes.img} />
+                  </a>
+                </Grid>
+                <Grid item>
+                  <p>10/2019++</p>
+                </Grid>
               </Grid>
               <Grid item xs>
-                <h4>
-                <a href='https://github.com/alexchernous/alexchernous.github.io/tree/source' target='_blank' rel='noopener noreferrer'>
-                  Website Portfolio
-                  <FontAwesomeIcon icon={faLink} color={highlightColor} style={{ marginLeft: '5px' }} />
-                </a>
-                </h4>
-                <p>This webpage you're on was put together to demonstrate primarily some
-                  React/Bootstrap knowledge and act as my personal portfolio.
+                <h3>
+                  <a href='https://github.com/alexchernous/alexchernous.github.io/tree/source' target='_blank' rel='noopener noreferrer'>
+                    Website Portfolio
+                    <FontAwesomeIcon icon={faLink} color={highlightColor} style={{ marginLeft: '5px' }} />
+                  </a>
+                </h3>
+                <h4>Description</h4>
+                <p>
+                  This webpage you're on was put together to demonstrate web concepts
+                  (e.g. responsive design), technology understanding (e.g. JS / React),
+                  and act as my personal portfolio.
                 </p>
-                <p>Using <b>React, Bootstrap,</b> and other libraries that can be found in
-                  package.json on GitHub.
+                <h4>Motivation</h4>
+                <p>
+                  Having a place on the internet that removes itself from social media sites
+                  is freeing. You can create your own content & style as well as demonstrate
+                  your skills while doing it.
+                </p>
+                <h4>Tools</h4>
+                <p>
+                  React, Bootstrap, Material UI and other libraries
+                  that can be found in package.json on GitHub.
                 </p>
               </Grid>
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={xsSizeItem}>
+        <Grid item xs={xsNumGridsItem} md={mdNumGridsItem} lg={lgNumGridsItem}>
           <Paper className={classes.paper}>
             <Grid container spacing={spacing}>
-              <Grid item>
-                <a href='https://github.com/alexchernous/ParkMe' target='_blank' rel='noopener noreferrer'>
-                  <FontAwesomeIcon icon={faAndroid} color={highlightColor}
-                    className={classes.img} />
-                </a>
+              <Grid item className={classes.visual}>
+                <Grid item>
+                  <a href='https://github.com/alexchernous/ParkMe' target='_blank' rel='noopener noreferrer'>
+                    <FontAwesomeIcon icon={faAndroid} color={highlightColor}
+                      className={classes.img} />
+                  </a>
+                </Grid>
+                <Grid item>
+                  <p>02/2020++</p>
+                </Grid>
               </Grid>
               <Grid item xs>
-                <h4>
+                <h3>
                   <a href='https://github.com/alexchernous/ParkMe' target='_blank' rel='noopener noreferrer'>
                     Parking App
                     <FontAwesomeIcon icon={faLink} color={highlightColor} style={{ marginLeft: '5px' }} />
                   </a>
-                </h4>
-                <p>An ongoing project to map free parking streets of Toronto.
+                </h3>
+                <h4>Description</h4>
+                <p>An project, in its infancy, to map free parking streets of Toronto.
                 </p>
-                <p>Using <b>Android Studio (Kotlin), Google Maps/Places APIs</b>.
+                <h4>Motivation</h4>
+                <p>
+                  The city, espeically downtown, can be a nightmare for cars and parking.
+                  So I wanted to tackle this problem - there's similar apps on the PlayStore
+                  today, but this is my approach. Moreover, this was a great way to play
+                  around with Google APIs.
+                </p>
+                <h4>Tools</h4>
+                <p>Android Studio (Kotlin), Google Maps / Places APIs.
                 </p>
               </Grid>
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={xsSizeItem}>
+        <Grid item xs={xsNumGridsItem} md={mdNumGridsItem} lg={lgNumGridsItem}>
           <Paper className={classes.paper}>
             <Grid container spacing={spacing}>
-              <Grid item>
-                <a href='https://github.com/alexchernous/NaturalLanguagePrediction' target='_blank' rel='noopener noreferrer'>
-                  <FontAwesomeIcon icon={faPython} color={highlightColor} className={classes.img} />
-                </a>
+              <Grid item className={classes.visual}>
+                <Grid item>
+                  <a href='https://github.com/alexchernous/NaturalLanguagePrediction' target='_blank' rel='noopener noreferrer'>
+                    <FontAwesomeIcon icon={faPython} color={highlightColor}
+                      className={classes.img} />
+                  </a>
+                </Grid>
+                <Grid item>
+                  <p>11/2018 - <br></br>01/2019</p>
+                </Grid>
               </Grid>
               <Grid item xs>
-                <h4>
+                <h3>
                   <a href='https://github.com/alexchernous/NaturalLanguagePrediction' target='_blank' rel='noopener noreferrer'>
                     Natural Language Prediction
                     <FontAwesomeIcon icon={faLink} color={highlightColor} style={{ marginLeft: '5px' }} />
                   </a>
-                </h4>
-                <p>Single word and sentence prediction from a statistical language model using
-                  a 2nd order (and 1st order where applicable) <b>Markov Model</b> approach.</p>
-                <p>Using <b>Python</b> and supporting libraries like regex, math, and numpy.</p>
-                <p>Literature used to train models: A Tale of Two Cities from
-                  <b> Project Gutenberg.</b></p>
+                </h3>
+                <h4>Description</h4>
+                <p>Single word and sentence prediction from a statistical language model (SLM) using
+                  a 2nd order (and 1st order where applicable) Markov Model approach.</p>
+                <h4>Motivation</h4>
+                <p>The interest came from smart phone keyboards and their word
+                  completion / prediction.
+                  I don't actually know the exact mechanism of how modern phones accomplish
+                  this task, but I decided to use my own approach of an SLM.
+                  I learned the concept of SLMs in university; however, implementing it
+                  on a real world problem only sparked my imagination a couple years later.
+                </p>
+                <h4>Tools</h4>
+                <p>Python and supporting libraries like regex, math, and numpy.</p>
+                <p>Literature used to train models: A Tale of Two Cities from <a href='https://www.gutenberg.org/' target='_blank' rel='noopener noreferrer'>Project Gutenberg.</a></p>
               </Grid>
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={xsSizeItem}>
+        <Grid item xs={xsNumGridsItem} md={mdNumGridsItem} lg={lgNumGridsItem}>
           <Paper className={classes.paper}>
             <Grid container spacing={spacing}>
-              <Grid item>
-                <a href='https://github.com/alexchernous/SentimentAnalysis' target='_blank' rel='noopener noreferrer'>
-                  <FontAwesomeIcon icon={faPython} color={highlightColor} className={classes.img} />
-                </a>
+              <Grid item className={classes.visual}>
+                <Grid item>
+                  <a href='https://github.com/alexchernous/SentimentAnalysis' target='_blank' rel='noopener noreferrer'>
+                    <FontAwesomeIcon icon={faPython} color={highlightColor}
+                      className={classes.img} />
+                  </a>
+                </Grid>
+                <Grid item>
+                  <p>01/2019 - <br></br>03/2019</p>
+                </Grid>
               </Grid>
               <Grid item xs>
-                <h4>
+                <h3>
                   <a href='https://github.com/alexchernous/SentimentAnalysis' target='_blank' rel='noopener noreferrer'>
                     Sentiment Analysis
                     <FontAwesomeIcon icon={faLink} color={highlightColor} style={{ marginLeft: '5px' }} />
                   </a>
-                </h4>
-                <p>Rudimenatry sentiment analysis. <b>SVM Machine Learning</b> algorithm trained on
+                </h3>
+                <h4>Description</h4>
+                <p>Rudimenatry sentiment analysis. SVM Machine Learning algorithm trained on
                   synthetic sentences containing smile and frown emojis to gauge sentiment
                   (positive, negative, neutral).
                 </p>
-                <p>Using <b>Python</b> and its <b>Machine Learning</b> libraries.</p>
+                <h4>Motivation</h4>
+                <p>Machine learning seems to be applied everywhere
+                  these days. So I decided to try and learn the basics.
+                  The specific topic of sentiment analysis was sparked by my [24]7.ai workplace...
+                </p>
+                <h4>Tools</h4>
+                <p>Python and its Machine Learning libraries.</p>
               </Grid>
             </Grid>
           </Paper>

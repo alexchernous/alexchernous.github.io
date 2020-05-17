@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
@@ -21,8 +22,6 @@ class Resume extends Component {
 
     this.onDocumentLoadSuccess = this.onDocumentLoadSuccess.bind(this);
     this.onPageLoadSuccess = this.onPageLoadSuccess.bind(this);
-    // this.handleNext = this.handleNext.bind(this);
-    // this.handlePrevious = this.handlePrevious.bind(this);
   }
 
   onDocumentLoadSuccess({ numPages }) {
@@ -30,15 +29,6 @@ class Resume extends Component {
   }
 
   onPageLoadSuccess(page) {
-    // https://github.com/wojtekmaj/react-pdf/issues/332#issuecomment-458121654
-    const textLayers = document.querySelectorAll('.react-pdf__Page__textContent');
-    textLayers.forEach((layer) => {
-      const { style } = layer;
-      style.top = '0';
-      style.left = '0';
-      style.transform = '';
-    });
-
     // https://github.com/wojtekmaj/react-pdf/issues/74
     const parentDiv = document.querySelector('#pdfDoc');
 
@@ -53,19 +43,6 @@ class Resume extends Component {
     }
   }
 
-  // disabling button only works on extra click...
-  // handleNext() {
-  //   if (this.state.pageNumber < this.state.numPages) {
-  //     this.setState((state) => ({ pageNumber: state.pageNumber + 1 }));
-  //   }
-  // }
-
-  // handlePrevious() {
-  //   if (this.state.pageNumber > 1) {
-  //     this.setState((state) => ({ pageNumber: state.pageNumber - 1 }));
-  //   }
-  // }
-
   render() {
     const highlightColor = '#E09E3B';
 
@@ -73,17 +50,21 @@ class Resume extends Component {
       <div id='pdfDoc'
         style={{
           display: 'grid',
+          justifyItems: 'center',
           justifyContent: 'center',
-          textAlign: 'center',
         }}>
 
-        <a href={resumePDF} download='AlexChernousResume.pdf'>
-          <Button variant='success'
+        <Button variant='success'
+          style={{
+            width: '50%',
+            height: '50px',
+            marginBottom: '10px',
+            marginTop: '10px',
+          }}>
+          <a href={resumePDF} download='AlexChernousResume.pdf'
             style={{
-              width: '50%',
-              height: '50px',
-              marginBottom: '10px',
-              marginTop: '10px',
+              textDecoration: 'inherit',
+              color: 'inherit',
             }}>
             <FontAwesomeIcon icon={faDownload} color={highlightColor}
               style={{
@@ -91,36 +72,14 @@ class Resume extends Component {
                 transition: '0.15s',
               }} />
                 Download Resume PDF
-          </Button>
-        </a>
+          </a>
+        </Button>
 
         <Document file={resumePDF} onLoadSuccess={this.onDocumentLoadSuccess}>
-          <Page onLoadSuccess={this.onPageLoadSuccess}
-            pageNumber={this.state.pageNumber} scale={this.state.scale} />
+          <Page style={{ display: 'block' }} onLoadSuccess={this.onPageLoadSuccess}
+            pageNumber={this.state.pageNumber} scale={this.state.scale}
+            renderAnnotationLayer={false} />
         </Document>
-
-        {/* <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gridGap: '5px',
-          marginBottom: '10px',
-        }}>
-
-          <Button variant='secondary' onClick={this.handlePrevious}
-            style={{
-              width: '100%',
-              transition: '0.15s',
-            }}>
-            Previous Page
-          </Button>
-          <Button variant='secondary' onClick={this.handleNext}
-            style={{
-              width: '100%',
-              transition: '0.15s',
-            }}>
-            Next Page
-          </Button>
-        </div> */}
       </div>
     );
   }

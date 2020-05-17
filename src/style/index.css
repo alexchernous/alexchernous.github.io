@@ -8,27 +8,40 @@ html, body {
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 #root {
     height: 100%;
     width: 100%;
     background: #eaeaeb;
+    overflow-x: hidden;
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+.nav-link {
+  transition: 0.15s;
+  white-space: nowrap;
+  color: rgb(182, 184, 187);
+}
+
+.nav-link:hover {
+  color: rgb(255, 255, 255);
+}
+
 .drop-down-link {
     display: block;
+    transition: 0.15s;
     padding: 5px 14px;
-    color: rgba(255, 255, 255, .5);
+    color: #b6b8bb;
 }
 
 .drop-down-link:hover {
     text-decoration: none;
-    color: rgba(255, 255, 255, .75);
+    color: #ffffff;
 }
 
 .dropdown-menu.show {
@@ -42,4 +55,12 @@ code {
 .MuiGrid-container {
   width: 100% !important;
   margin: 0 !important;
+}
+
+.react-pdf__Page__textContent span {
+	opacity: 0.1;
+}
+
+.react-pdf__Page__textContent span::selection {
+	background-color: blue;
 }

@@ -17,11 +17,10 @@ class Header extends Component {
 
     return (
       <Navbar
-        bg='dark'variant='dark' expand='md' collapseOnSelect
+        bg='dark' variant='dark' expand='md' collapseOnSelect
         style={{
           width: '100%',
         }}>
-
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <LinkContainer to='/projects'>
@@ -32,54 +31,32 @@ class Header extends Component {
                 style={{
                   fontSize: '35px',
                 }} />
-
             </Navbar.Brand>
           </LinkContainer>
           <Nav className='mr-auto'>
-            <Nav.Link eventKey='1' as={Link} to='/projects'
-              style={{
-                transition: '0.15s',
-                whiteSpace: 'nowrap',
-              }}>
-
+            <Nav.Link eventKey='1' as={Link} to='/projects'>
               <FontAwesomeIcon icon={faProjectDiagram} color={highlightColor}
                 style={{
                   marginRight: '5px',
                 }} />
                 Projects
             </Nav.Link>
-            <Nav.Link eventKey='2' as={Link} to='/resume'
-              style={{
-                transition: '0.15s',
-                whiteSpace: 'nowrap',
-              }}>
-
+            <Nav.Link eventKey='2' as={Link} to='/resume'>
               <FontAwesomeIcon icon={faFile} color={highlightColor}
                 style={{
                   marginRight: '5px',
                 }} />
                 Resume
             </Nav.Link>
-
             <NavDropdown title={<MyDropDown />}>
-              <Nav.Link bsPrefix='drop-down-link' href='https://github.com/alexchernous' target='_blank'
-                style={{
-                  transition: '0.15s',
-                  whiteSpace: 'nowrap',
-                }}>
-
+              <Nav.Link bsPrefix='drop-down-link' href='https://github.com/alexchernous' target='_blank'>
                 <FontAwesomeIcon icon={faGithub} color={highlightColor}
                   style={{
                     marginRight: '5px',
                   }} />
                   GitHub
               </Nav.Link>
-              <Nav.Link bsPrefix='drop-down-link' href='https://www.linkedin.com/in/alexchernous/' target='_blank'
-                style={{
-                  transition: '0.15s',
-                  whiteSpace: 'nowrap',
-                }}>
-
+              <Nav.Link bsPrefix='drop-down-link' href='https://www.linkedin.com/in/alexchernous/' target='_blank'>
                 <FontAwesomeIcon icon={faLinkedin} color={highlightColor}
                   style={{
                     marginRight: '5px',
@@ -87,12 +64,7 @@ class Header extends Component {
                   LinkedIn
               </Nav.Link>
             </NavDropdown>
-            <Nav.Link eventKey='3' as={Link} to='/about'
-              style={{
-                transition: '0.15s',
-                whiteSpace: 'nowrap',
-              }}>
-
+            <Nav.Link eventKey='3' as={Link} to='/about'>
               <FontAwesomeIcon icon={faUser} color={highlightColor}
                 style={{
                   marginRight: '5px',

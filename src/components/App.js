@@ -6,7 +6,7 @@ import Header from './Header';
 import Home from './Home';
 import ProjectGrid from './ProjectGrid';
 import Resume from './Resume';
-import AboutMe from './AboutMe';
+import AboutMe from './About';
 
 // dark/light theme options through themecontext
 class App extends Component {

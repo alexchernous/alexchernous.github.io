@@ -3,10 +3,12 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import Header from './Header';
-import Home from './Home';
-import ProjectGrid from './ProjectGrid';
+// import Home from './Home';
+import Projects from './Projects';
 import Resume from './Resume';
-import AboutMe from './About';
+import About from './About';
+
+const highlightColor = '#E09E3B';
 
 // dark/light theme options through themecontext
 class App extends Component {
@@ -17,14 +19,14 @@ class App extends Component {
           display: 'flex',
           width: '100%',
         }}>
-          <Header />
+          <Header highlightColor={highlightColor} />
         </div>
 
         <Switch>
-          <Route exact path='/' component={ProjectGrid} />
-          <Route path='/projects' component={ProjectGrid} />
-          <Route path='/resume' component={Resume} />
-          <Route path='/about' component={AboutMe} />
+          <Route exact path='/' render={() => <Projects highlightColor={highlightColor} />} />
+          <Route path='/projects' render={() => <Projects highlightColor={highlightColor} />} />
+          <Route path='/resume' render={() => <Resume highlightColor={highlightColor} />} />
+          <Route path='/about' render={() => <About highlightColor={highlightColor} />} />
         </Switch>
       </HashRouter>
     );

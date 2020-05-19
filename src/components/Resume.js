@@ -49,9 +49,13 @@ class Resume extends Component {
     return (
       <div id='pdfDoc'
         style={{
-          display: 'grid',
-          justifyItems: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
           justifyContent: 'center',
+          height: '100%',
+          position: 'absolute',
+          top: '65px',
         }}>
 
         <Button variant='success'

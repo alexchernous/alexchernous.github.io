@@ -48,7 +48,7 @@ export default function Header(props) {
           <Navbar.Brand bsPrefix='nav-link-custom'>
             <FontAwesomeIcon
               icon={faRocket}
-              style={({ fontSize: '35px', paddingTop: '5px' , ...iconStyle })} />
+              style={({ fontSize: '35px', paddingTop: '5px', ...iconStyle })} />
           </Navbar.Brand>
         </LinkContainer>
         <Nav>

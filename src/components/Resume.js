@@ -48,7 +48,6 @@ class Resume extends Component {
       <div id='pdfDoc'
         style={{
           display: 'grid',
-          justifyItems: 'center',
           justifyContent: 'center',
         }}>
         {/* this is a hack - need to fix position */}

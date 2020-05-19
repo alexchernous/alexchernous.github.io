@@ -44,23 +44,20 @@ class Resume extends Component {
   }
 
   render() {
-    const highlightColor = '#E09E3B';
-
     return (
       <div id='pdfDoc'
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
+          display: 'grid',
+          justifyItems: 'center',
           justifyContent: 'center',
-          height: '100%',
-          position: 'absolute',
-          top: '65px',
         }}>
-
+        {/* this is a hack - need to fix position */}
+        <div style={{
+          height: '65px',
+        }} />
         <Button variant='success'
           style={{
-            width: '50%',
+            width: '250px',
             height: '50px',
             marginBottom: '10px',
             marginTop: '10px',
@@ -70,19 +67,18 @@ class Resume extends Component {
               textDecoration: 'inherit',
               color: 'inherit',
             }}>
-            <FontAwesomeIcon icon={faDownload} color={highlightColor}
+            <FontAwesomeIcon icon={faDownload} color={this.props.highlightColor}
               style={{
                 marginRight: '5px',
-                transition: '0.15s',
+                transition: '0.25s',
               }} />
-                Download Resume PDF
+              Download Resume PDF
           </a>
         </Button>
 
         <Document file={resumePDF} onLoadSuccess={this.onDocumentLoadSuccess}>
-          <Page style={{ display: 'block' }} onLoadSuccess={this.onPageLoadSuccess}
-            pageNumber={this.state.pageNumber} scale={this.state.scale}
-            renderAnnotationLayer={false} />
+          <Page onLoadSuccess={this.onPageLoadSuccess} pageNumber={this.state.pageNumber}
+            scale={this.state.scale} renderAnnotationLayer={false} />
         </Document>
       </div>
     );

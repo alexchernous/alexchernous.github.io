@@ -77,7 +77,7 @@ export default function Home() {
           //     transition: '0.15s',
           //     whiteSpace: 'nowrap',
           //   }}>
-            <GridListTile key={tile.img}>
+            <GridListTile key={tile.title}>
               <FontAwesomeIcon icon={tile.img} color={highlightColor}
                 style={{ fontSize: cellHeight }} />
               {/* <img src={tile.img} alt={tile.title} /> */}

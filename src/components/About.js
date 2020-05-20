@@ -1,71 +1,63 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { Nav } from 'react-bootstrap';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import AboutContent from '../content/AboutContent';
-// import Typography from '@material-ui/core/Typography';
+import SourcesCredits from './SourcesCredits';
+import Books from './Books';
+import Hobbies from './Hobbies';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     paddingTop: '8px',
     position: 'absolute',
-    top: '65px',
+    top: '190px',
   },
   paper: {
     padding: theme.spacing(2),
     textAlign: 'left',
-    color: '#343a40',
     margin: 'auto',
-    backgroundColor: '#343a401a',
+    backgroundColor: '#d7d8d9',
+    color: '#343a40',
   },
 }));
 
-const sitesData = [
-  {
-    img: faGithub,
-    href: 'https://github.com/alexchernous',
-  },
-  {
-    img: faLinkedin,
-    href: 'https://www.linkedin.com/in/alexchernous',
-  },
-];
-
 export default function Projects(props) {
   const classes = useStyles();
-  const navLinkStyle = {
-    fontSize: '50px',
-    transition: '0.25s',
-  };
+  const content = [
+    {
+      title: 'About',
+      component: <AboutContent />,
+    },
+    {
+      title: 'Resume',
+      component: <Hobbies highlightColor={props.highlightColor} />,
+    },
+    {
+      title: 'About Me',
+      component: <Books />,
+    },
+  ];
 
   return (
-    <div className={classes.root}>
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-      }}>
-        {sitesData.map((tile) => (
-          <Nav.Link href={tile.href} target='_blank' rel='noopener noreferrer'>
-            <FontAwesomeIcon icon={tile.img} color={props.highlightColor} style={navLinkStyle} />
-          </Nav.Link>
-        ))}
-      </div>
-      <Grid container spacing={2} justify='center' direction='row'>
-        <Grid item xs={12} md={8} lg={7}>
-          <Paper className={classes.paper}>
-            <Grid container spacing={2}>
-              <Grid item>
-                <AboutContent />
+    <div className={classes.root} style={{ top: props.bannerSize + 50 }}>
+      {content.map((tile) => (
+        <Grid key={tile.title} container spacing={2} justify='center' direction='row'>
+          <Grid item xs={12} md={8} lg={7}>
+            <Paper className={classes.paper}>
+              <Grid container spacing={2}>
+                <Grid item>
+                  {tile.component}
+                </Grid>
               </Grid>
-            </Grid>
-          </Paper>
+            </Paper>
+          </Grid>
         </Grid>
-      </Grid>
+      ))}
+      <SourcesCredits highlightColor={props.highlightColor} />
     </div>
   );
 }

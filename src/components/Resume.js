@@ -10,6 +10,7 @@ import resumePDF from '../content/AlexChernousResume.pdf';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
+
 class Resume extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +34,7 @@ class Resume extends Component {
     const parentDiv = document.querySelector('#pdfDoc');
 
     if (parentDiv.clientWidth > 750) {
-      this.setState({ scale: 1.2 });
+      this.setState({ scale: 1.3 });
     } else {
       const pageScale = parentDiv.clientWidth / page.originalWidth;
 
@@ -49,10 +50,12 @@ class Resume extends Component {
         style={{
           display: 'grid',
           justifyContent: 'center',
+          // position: 'absolute',
+          // top: this.props.bannerSize + 50,
         }}>
         {/* this is a hack - need to fix position */}
         <div style={{
-          height: '65px',
+          height: this.props.bannerSize + 50,
         }} />
         <Button variant='success'
           style={{

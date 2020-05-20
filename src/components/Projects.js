@@ -11,19 +11,19 @@ import ParkMeContent from '../content/ParkMeContent';
 import NLPContent from '../content/NLPContent';
 import SentimentContent from '../content/SentimentContent';
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     paddingTop: '8px',
     position: 'absolute',
-    top: '65px',
   },
   paper: {
     padding: theme.spacing(2),
     textAlign: 'left',
-    color: '#343a40',
     margin: 'auto',
-    backgroundColor: '#343a401a',
+    backgroundColor: '#d7d8d9',
+    color: '#343a40',
   },
   img: {
     margin: 'auto',
@@ -35,39 +35,38 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const projectData = [
-  {
-    img: faReact,
-    title: 'Website Portfolio',
-    href: 'https://github.com/alexchernous/alexchernous.github.io/tree/source',
-    date: '10/2019++',
-    content: <WebsiteContent />,
-  },
-  {
-    img: faAndroid,
-    title: 'ParkMe',
-    href: 'https://github.com/alexchernous/ParkMe',
-    date: '02/2020++',
-    content: <ParkMeContent />,
-  },
-  {
-    img: faPython,
-    title: 'Natural Language Prediction',
-    href: 'https://github.com/alexchernous/NaturalLanguagePrediction',
-    date: <p>11/2018 - <br></br>01/2019</p>,
-    content: <NLPContent />,
-  },
-  {
-    img: faPython,
-    title: 'Sentiment Analysis',
-    href: 'https://github.com/alexchernous/SentimentAnalysis',
-    date: <p>01/2019 - <br></br>03/2019</p>,
-    content: <SentimentContent />,
-  },
-];
-
 export default function ProjectGrid(props) {
   const classes = useStyles();
+  const projectData = [
+    {
+      img: faReact,
+      title: 'Website Portfolio',
+      href: 'https://github.com/alexchernous/alexchernous.github.io/tree/source',
+      date: '10/2019++',
+      content: <WebsiteContent />,
+    },
+    {
+      img: faAndroid,
+      title: 'ParkMe',
+      href: 'https://github.com/alexchernous/ParkMe',
+      date: '02/2020++',
+      content: <ParkMeContent />,
+    },
+    {
+      img: faPython,
+      title: 'Natural Language Prediction',
+      href: 'https://github.com/alexchernous/NaturalLanguagePrediction',
+      date: <p>11/2018 - <br></br>01/2019</p>,
+      content: <NLPContent />,
+    },
+    {
+      img: faPython,
+      title: 'Sentiment Analysis',
+      href: 'https://github.com/alexchernous/SentimentAnalysis',
+      date: <p>01/2019 - <br></br>03/2019</p>,
+      content: <SentimentContent />,
+    },
+  ];
   const { highlightColor } = props;
   const gridNumbers = {
     xs: 12,
@@ -77,10 +76,10 @@ export default function ProjectGrid(props) {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} style={{ top: props.bannerSize + 50 }}>
       <Grid container spacing={gridNumbers.spacing} justify='center' direction='row'>
       {projectData.map((tile) => (
-        <Grid item xs={gridNumbers.xs} md={gridNumbers.md} lg={gridNumbers.lg}>
+        <Grid key={tile.title} item xs={gridNumbers.xs} md={gridNumbers.md} lg={gridNumbers.lg}>
           <Paper className={classes.paper}>
             <Grid container spacing={gridNumbers.spacing}>
               <Grid item className={classes.visual}>

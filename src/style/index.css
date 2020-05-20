@@ -14,7 +14,7 @@ html, body {
 #root {
     height: 100%;
     width: 100%;
-    background: #eaeaeb;
+    background: #343a401a;
     overflow-x: hidden;
 }
 
@@ -54,5 +54,5 @@ code {
 }
 
 .fa-linkedin:hover, .fa-github:hover {
-  color: #343a40;
+  color: #E09E3B;
 }

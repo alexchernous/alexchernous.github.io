@@ -11,6 +11,11 @@ import resumePDF from '../content/AlexChernousResume.pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 
+// Internet Explorer 6-11
+const isIE = /*@cc_on!@*/ false || !!document.documentMode;
+// Edge 20+
+const isEdge = !isIE && !!window.StyleMedia;
+
 class Resume extends Component {
   constructor(props) {
     super(props);
@@ -55,8 +60,7 @@ class Resume extends Component {
           style={{
             width: '250px',
             height: '50px',
-            marginBottom: '10px',
-            marginTop: '10px',
+            margin: '8px',
           }}>
           <a href={resumePDF} download='AlexChernousResume.pdf'
             style={{
@@ -71,7 +75,9 @@ class Resume extends Component {
               Download Resume PDF
           </a>
         </Button>
-
+        {(isIE || isEdge)
+          && <h5 style={{ margin: '8px' }}>Apologies for Internet Explorer / Edge users for the PDF loading times.</h5>
+        }
         <Document file={resumePDF} onLoadSuccess={this.onDocumentLoadSuccess}>
           <Page onLoadSuccess={this.onPageLoadSuccess} pageNumber={this.state.pageNumber}
             scale={this.state.scale} renderAnnotationLayer={false} />

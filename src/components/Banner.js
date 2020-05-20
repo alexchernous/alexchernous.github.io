@@ -49,17 +49,18 @@ class Banner extends Component {
   constructor(props) {
     super(props);
 
-    this.componentDidMount = this.componentDidMount.bind(this);
+    // this is in place for potential sticky banners... for now doesn't work
+    // this.componentDidMount = this.componentDidMount.bind(this);
   }
 
-  componentDidMount() {
-    this.props.updateBannerSize(document.querySelector('#banner').clientHeight);
-  }
+  // componentDidMount() {
+  //   this.props.updateBannerSize(document.querySelector('#banner').clientHeight);
+  // }
 
   render() {
     return (
       <React.Fragment>
-        <Grid id='banner' container spacing={2} justify='center' direction='row' style={{ position: 'absolute', top: '55px' }}>
+        <Grid id='banner' container spacing={2} justify='center' direction='row'>
           <Grid item xs={12} md={8} lg={7}>
             <Paper style={styles.paperBannerStyle}>
               <Grid container spacing={0}>
@@ -79,7 +80,8 @@ class Banner extends Component {
                   <Grid key={tile.title} item style={styles.bannerItemStyle}>
                     <Nav.Link href={tile.href} target='_blank' rel='noopener noreferrer' style={styles.navLinkStyle}>
                       <FontAwesomeIcon icon={tile.img} color='#d7d8d9'
-                        style={{ fontSize: '50px', ...styles.navLinkStyle }} />
+                        // ms edge doesn't like object spread
+                        style={ Object.assign({}, { fontSize: '50px' }, styles.navLinkStyle) } />
                     </Nav.Link>
                   </Grid>
                 ))}

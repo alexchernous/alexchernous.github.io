@@ -34,7 +34,7 @@ class Resume extends Component {
     const parentDiv = document.querySelector('#pdfDoc');
 
     if (parentDiv.clientWidth > 750) {
-      this.setState({ scale: 1.3 });
+      this.setState({ scale: 1.2 });
     } else {
       const pageScale = parentDiv.clientWidth / page.originalWidth;
 
@@ -50,13 +50,7 @@ class Resume extends Component {
         style={{
           display: 'grid',
           justifyContent: 'center',
-          // position: 'absolute',
-          // top: this.props.bannerSize + 50,
         }}>
-        {/* this is a hack - need to fix position */}
-        <div style={{
-          height: this.props.bannerSize + 50,
-        }} />
         <Button variant='success'
           style={{
             width: '250px',

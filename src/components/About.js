@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     paddingTop: '8px',
     position: 'absolute',
-    top: '190px',
+    width: '100%',
   },
   paper: {
     padding: theme.spacing(2),
@@ -43,7 +43,7 @@ export default function Projects(props) {
   ];
 
   return (
-    <div className={classes.root} style={{ top: props.bannerSize + 50 }}>
+    <div className={classes.root}>
       {content.map((tile) => (
         <Grid key={tile.title} container spacing={2} justify='center' direction='row'>
           <Grid item xs={12} md={8} lg={7}>

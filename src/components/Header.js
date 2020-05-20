@@ -36,7 +36,7 @@ export default function Header(props) {
   ];
 
   return (
-    <Navbar fixed='top' bg='dark' variant='dark' expand='md' collapseOnSelect
+    <Navbar bg='dark' variant='dark' expand='md' collapseOnSelect
       style={{
         width: '100%',
         margin: '0px',
@@ -48,7 +48,8 @@ export default function Header(props) {
           <Navbar.Brand bsPrefix='nav-link-custom'>
             <FontAwesomeIcon
               icon={faRocket}
-              style={({ fontSize: '35px', paddingTop: '5px', ...iconStyle })} />
+              // ms edge doesn't like object spread
+              style={Object.assign({}, { fontSize: '35px', paddingTop: '5px' }, iconStyle )} />
           </Navbar.Brand>
         </LinkContainer>
         <Nav>

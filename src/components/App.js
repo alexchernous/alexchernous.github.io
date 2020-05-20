@@ -18,27 +18,28 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      bannerSize: null,
-    };
+    // this is in place for potential sticky banners... for now doesn't work
+    // this.state = {
+    //   bannerSize: null,
+    // };
 
-    this.updateBannerSize = this.updateBannerSize.bind(this);
+    // this.updateBannerSize = this.updateBannerSize.bind(this);
   }
 
-  updateBannerSize(bannerSize) {
-    this.setState({ bannerSize });
-  }
+  // updateBannerSize(bannerSize) {
+  //   this.setState({ bannerSize });
+  // }
 
   render() {
     return (
       <HashRouter basename='/'>
         <Header highlightColor={highlightColor} />
-        <Banner highlightColor={highlightColor} updateBannerSize={this.updateBannerSize} />
+        <Banner highlightColor={highlightColor} />
         <Switch>
-          <Route exact path='/' render={() => <Projects highlightColor={highlightColor} bannerSize={this.state.bannerSize} />} />
-          <Route path='/projects' render={() => <Projects highlightColor={highlightColor} bannerSize={this.state.bannerSize} />} />
-          <Route path='/resume' render={() => <Resume highlightColor={highlightColor} bannerSize={this.state.bannerSize} />} />
-          <Route path='/about' render={() => <About highlightColor={highlightColor} bannerSize={this.state.bannerSize} />} />
+          <Route exact path='/' render={() => <Projects highlightColor={highlightColor} />} />
+          <Route path='/projects' render={() => <Projects highlightColor={highlightColor} />} />
+          <Route path='/resume' render={() => <Resume highlightColor={highlightColor} />} />
+          <Route path='/about' render={() => <About highlightColor={highlightColor} />} />
         </Switch>
       </HashRouter>
     );

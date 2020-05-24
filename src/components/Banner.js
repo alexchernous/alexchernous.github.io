@@ -46,17 +46,6 @@ const sitesData = [
 ];
 
 class Banner extends Component {
-  constructor(props) {
-    super(props);
-
-    // this is in place for potential sticky banners... for now doesn't work
-    // this.componentDidMount = this.componentDidMount.bind(this);
-  }
-
-  // componentDidMount() {
-  //   this.props.updateBannerSize(document.querySelector('#banner').clientHeight);
-  // }
-
   render() {
     return (
       <React.Fragment>
@@ -81,6 +70,7 @@ class Banner extends Component {
                     <Nav.Link href={tile.href} target='_blank' rel='noopener noreferrer' style={styles.navLinkStyle}>
                       <FontAwesomeIcon icon={tile.img} color='#d7d8d9'
                         // ms edge doesn't like object spread
+                        // eslint-disable-next-line prefer-object-spread
                         style={ Object.assign({}, { fontSize: '50px' }, styles.navLinkStyle) } />
                     </Nav.Link>
                   </Grid>

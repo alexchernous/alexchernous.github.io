@@ -5,7 +5,7 @@ export default function ParkMeContent() {
   return (
     <React.Fragment>
       <h4>Description</h4>
-      <p>An project, in its infancy, to map free parking streets of Toronto.
+      <p>A project, in its infancy, to map free parking streets of Toronto.
       </p>
       <h4>Motivation</h4>
       <p>

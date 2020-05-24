@@ -15,21 +15,6 @@ const highlightColor = '#E09E3B';
 
 // dark/light theme options through themecontext
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    // this is in place for potential sticky banners... for now doesn't work
-    // this.state = {
-    //   bannerSize: null,
-    // };
-
-    // this.updateBannerSize = this.updateBannerSize.bind(this);
-  }
-
-  // updateBannerSize(bannerSize) {
-  //   this.setState({ bannerSize });
-  // }
-
   render() {
     return (
       <HashRouter basename='/'>

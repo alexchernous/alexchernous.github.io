@@ -49,7 +49,8 @@ export default function Header(props) {
             <FontAwesomeIcon
               icon={faRocket}
               // ms edge doesn't like object spread
-              style={Object.assign({}, { fontSize: '35px', paddingTop: '5px' }, iconStyle )} />
+              // eslint-disable-next-line prefer-object-spread
+              style={ Object.assign({}, { fontSize: '35px', paddingTop: '5px' }, iconStyle) } />
           </Navbar.Brand>
         </LinkContainer>
         <Nav>

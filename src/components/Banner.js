@@ -8,7 +8,7 @@ import { Nav } from 'react-bootstrap';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
-import AlexPhoto from '../content/images/AlexPhoto.png';
+import Photo from '../content/images/AlexPhoto.png';
 
 
 const styles = {
@@ -19,7 +19,6 @@ const styles = {
   },
   paperBannerStyle: {
     flexGrow: 1,
-    paddingTop: '8px',
     textAlign: 'left',
     margin: 'auto',
     color: '#d7d8d9',
@@ -45,43 +44,39 @@ const sitesData = [
   },
 ];
 
-class Banner extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <Grid id='banner' container spacing={2} justify='center' direction='row'>
-          <Grid item xs={12} md={8} lg={7}>
-            <Paper style={styles.paperBannerStyle}>
-              <Grid container spacing={0}>
-                <Grid item style={styles.bannerItemStyle}>
-                  <Avatar alt="Alex Chernous" src={AlexPhoto} style={{ height: '100px', width: '100px' }} />
-                </Grid>
-                <Grid item style={styles.bannerItemStyle}>
-                  <h3>Alex Chernous</h3>
-                </Grid>
-                <Grid item style={styles.bannerItemStyle}>
-                  <h4>|</h4>
-                </Grid>
-                <Grid item style={styles.bannerItemStyle}>
-                  <h4>Find me on...</h4>
-                </Grid>
-                {sitesData.map((tile) => (
-                  <Grid key={tile.title} item style={styles.bannerItemStyle}>
-                    <Nav.Link href={tile.href} target='_blank' rel='noopener noreferrer' style={styles.navLinkStyle}>
-                      <FontAwesomeIcon icon={tile.img} color='#d7d8d9'
-                        // ms edge doesn't like object spread
-                        // eslint-disable-next-line prefer-object-spread
-                        style={ Object.assign({}, { fontSize: '50px' }, styles.navLinkStyle) } />
-                    </Nav.Link>
-                  </Grid>
-                ))}
+export default function Banner() {
+  return (
+    <React.Fragment>
+      <Grid id='banner' container spacing={2} justify='center' direction='row'>
+        <Grid item xs={12} md={8} lg={7}>
+          <Paper style={styles.paperBannerStyle}>
+            <Grid container spacing={0}>
+              <Grid item style={styles.bannerItemStyle}>
+                <Avatar alt="Alex Chernous" src={Photo} style={{ height: '100px', width: '100px' }} />
               </Grid>
-            </Paper>
-          </Grid>
+              <Grid item style={styles.bannerItemStyle}>
+                <h3>Alex Chernous</h3>
+              </Grid>
+              <Grid item style={styles.bannerItemStyle}>
+                <h3>|</h3>
+              </Grid>
+              <Grid item style={styles.bannerItemStyle}>
+                <h5>Find me on...</h5>
+              </Grid>
+              {sitesData.map((tile) => (
+                <Grid key={tile.title} item style={styles.bannerItemStyle}>
+                  <Nav.Link href={tile.href} target='_blank' rel='noopener noreferrer' style={styles.navLinkStyle}>
+                    <FontAwesomeIcon icon={tile.img} color='#d7d8d9'
+                      // ms edge doesn't like object spread
+                      // eslint-disable-next-line prefer-object-spread
+                      style={ Object.assign({}, { fontSize: '50px' }, styles.navLinkStyle) } />
+                  </Nav.Link>
+                </Grid>
+              ))}
+            </Grid>
+          </Paper>
         </Grid>
-      </React.Fragment>
-    );
-  }
+      </Grid>
+    </React.Fragment>
+  );
 }
-
-export default Banner;

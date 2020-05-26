@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <HashRouter basename='/'>
         <Header highlightColor={highlightColor} />
-        <Banner highlightColor={highlightColor} />
+        <Banner />
         <Switch>
           <Route exact path='/' render={() => <Projects highlightColor={highlightColor} />} />
           <Route path='/projects' render={() => <Projects highlightColor={highlightColor} />} />

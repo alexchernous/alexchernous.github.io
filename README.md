@@ -1,5 +1,3 @@
 ### Current issues
 - Microsoft Edge: Weird extra space under Resume page
-
-### TODO
-- Redesign portfolio
+- Microsoft Edge: Resume takes long to load...

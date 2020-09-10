@@ -18,7 +18,7 @@ export default function AboutContent() {
         Computer Science knowledge by acting as an Application Developer on
         similar types of projects that I designed.</p>
       <p>Ultimately, I decided to commit to the technical side of things
-        and transferred to a full time Software Engineer role to help the SaaS team
+        and transferred internally to a full time Software Engineer role to help the SaaS team
         build our Customer Service AI Platform.</p>
       <p>Receiving this experience opened my eyes to multiple important areas
         of the field and made me appreciate the intricacies of the development

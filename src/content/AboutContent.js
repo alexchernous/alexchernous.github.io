@@ -12,15 +12,18 @@ export default function AboutContent() {
       <p>I want to work in an environment that values the user experience as much as I do.</p>
       <h4>Experience</h4>
       <p>My first job out of university gave me an opportunity to work in
-        the AI and NLP field as a UX Conversational Designer (experience and
-        responsibilities outlined in Resume).
-        This position fit nicely with my Linguistics background.
-        As time went on it also gave me a chance to display my
+        the AI field as a UX Conversational Designer where I designed
+        various chatbot solutions for multiple fortune 500 clients.</p>
+      <p>As time went on it also gave me a chance to display my
         Computer Science knowledge by acting as an Application Developer on
         similar types of projects that I designed.</p>
-      <p>Receiving this experience opened my eyes to two important areas of the
-        field and made me appreciate the intricacies of the development
-        process as a whole.</p>
+      <p>Ultimately, I decided to commit to the technical side of things
+        and transferred to a full time Software Engineer role to help the SaaS team
+        build our Customer Service AI Platform.</p>
+      <p>Receiving this experience opened my eyes to multiple important areas
+        of the field and made me appreciate the intricacies of the development
+        process as a whole: From various technological complexities to
+        collaboration with a wide array of teams and talent.</p>
     </React.Fragment>
   );
 }

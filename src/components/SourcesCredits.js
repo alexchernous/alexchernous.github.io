@@ -6,6 +6,7 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import constants from '../constants';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,18 +23,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SourcesCredits(props) {
+const SourcesCredits = (props) => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <ExpansionPanel square={true} className={classes.panel}>
-        <ExpansionPanelSummary className={classes.heading}
+        <ExpansionPanelSummary
+          className={classes.heading}
           expandIcon={<ExpandMoreIcon style={{ color: props.highlightColor }} />}
           aria-controls="panel1-content"
           id="panel1-header"
         >
-          <Typography className={classes.heading}>Sources and Credits</Typography>
+          <Typography className={classes.heading}>{constants.content.sources.heading}</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography className={classes.heading}>
@@ -54,4 +56,6 @@ export default function SourcesCredits(props) {
       </ExpansionPanel>
     </div>
   );
-}
+};
+
+export default SourcesCredits;

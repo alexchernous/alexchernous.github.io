@@ -2,39 +2,39 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// eslint-disable-next-line object-curly-newline
-import { faUmbrellaBeach, faRocket, faMountain, faGamepad, faGlobeAmericas, faBook } from '@fortawesome/free-solid-svg-icons';
+import {
+  faUmbrellaBeach,
+  faRocket,
+  faMountain,
+  faGamepad,
+  faGlobeAmericas,
+  faBook,
+} from '@fortawesome/free-solid-svg-icons';
+import constants from '../constants';
 
-const hobbiesData = [
-  {
-    img: faUmbrellaBeach,
-    title: 'Travel',
-  },
-  {
-    img: faRocket,
-    title: 'Space',
-  },
-  {
-    img: faMountain,
-    title: 'Rock Climbing',
-  },
-  {
-    img: faGamepad,
-    title: 'Games',
-  },
-  {
-    img: faGlobeAmericas,
-    title: 'Maps',
-  },
-  {
-    img: faBook,
-    title: 'Reading',
-  },
-];
+const hobbiesData = [{
+  img: faUmbrellaBeach,
+  title: 'Travel',
+}, {
+  img: faRocket,
+  title: 'Space',
+}, {
+  img: faMountain,
+  title: 'Rock Climbing',
+}, {
+  img: faGamepad,
+  title: 'Games',
+}, {
+  img: faGlobeAmericas,
+  title: 'Maps',
+}, {
+  img: faBook,
+  title: 'Reading',
+}];
 
-export default function Hobbies(props) {
+const Hobbies = () => {
   const iconStyle = {
-    color: '#343a40',
+    color: constants.colors.navy,
     padding: '5px',
     fontSize: '70px',
   };
@@ -46,7 +46,9 @@ export default function Hobbies(props) {
         paddingTop: '8px',
         paddingBottom: '8px',
         margin: '0px',
-      }}>Stuff I like to do and learn about</h4>
+      }}>
+        {constants.content.hobbies.heading}
+      </h4>
       <div style={{
         display: 'flex',
         flexWrap: 'wrap',
@@ -64,10 +66,12 @@ export default function Hobbies(props) {
             padding: '8px',
           }}>
             <FontAwesomeIcon icon={tile.img} style={iconStyle} />
-          {tile.title}
+            {tile.title}
           </div>
         ))}
       </div>
     </React.Fragment>
   );
-}
+};
+
+export default Hobbies;

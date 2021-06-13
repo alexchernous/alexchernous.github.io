@@ -7,7 +7,7 @@ import AboutContent from '../content/AboutContent';
 import SourcesCredits from './SourcesCredits';
 import Books from './Books';
 import Hobbies from './Hobbies';
-
+import constants from '../constants';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,27 +25,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Projects(props) {
+const About = () => {
   const classes = useStyles();
-  const content = [
-    {
-      title: 'About',
-      component: <AboutContent />,
-    },
-    {
-      title: 'Resume',
-      component: <Hobbies highlightColor={props.highlightColor} />,
-    },
-    {
-      title: 'About Me',
-      component: <Books />,
-    },
-  ];
+  const highlightColor = constants.colors.orange;
+  const content = [{
+    title: 'About',
+    component: <AboutContent />,
+  }, {
+    title: 'Resume',
+    component: <Hobbies />,
+  }, {
+    title: 'About Me',
+    component: <Books />,
+  }];
 
   return (
     <div className={classes.root}>
       {content.map((tile) => (
-        <Grid key={tile.title} container spacing={2} justify='center' direction='row'>
+        <Grid
+          key={tile.title}
+          container
+          spacing={2}
+          justify='center'
+          direction='row'
+        >
           <Grid item xs={12} md={8} lg={7}>
             <Paper className={classes.paper}>
               <Grid container spacing={2}>
@@ -57,7 +60,9 @@ export default function Projects(props) {
           </Grid>
         </Grid>
       ))}
-      <SourcesCredits highlightColor={props.highlightColor} />
+      <SourcesCredits highlightColor={highlightColor} />
     </div>
   );
-}
+};
+
+export default About;

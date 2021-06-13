@@ -7,7 +7,7 @@ import fingerprints from '../content/images/fingerprints_of_gods.jpg';
 import foundation from '../content/images/foundation.jpg';
 import go1984 from '../content/images/1984.jpg';
 import tuesdays from '../content/images/tuesdays.jpg';
-
+import constants from '../constants';
 
 const bookStyle = {
   root: {
@@ -25,47 +25,49 @@ const bookStyle = {
   },
 };
 
-const bookData = [
-  {
-    img: cavesSteel,
-    title: 'Caves',
-  },
-  {
-    img: foundation,
-    title: 'Foundation',
-  },
-  {
-    img: fingerprints,
-    title: 'Fingerprints',
-  },
-  {
-    img: crimePunishment,
-    title: 'Crime',
-  },
-  {
-    img: go1984,
-    title: '1984',
-  },
-  {
-    img: tuesdays,
-    title: 'Tuesdays',
-  },
-];
+const bookData = [{
+  img: cavesSteel,
+  title: 'Caves',
+}, {
+  img: foundation,
+  title: 'Foundation',
+}, {
+  img: fingerprints,
+  title: 'Fingerprints',
+}, {
+  img: crimePunishment,
+  title: 'Crime',
+}, {
+  img: go1984,
+  title: '1984',
+}, {
+  img: tuesdays,
+  title: 'Tuesdays',
+}];
 
-export default function Books() {
-  return (
-    <React.Fragment>
-      <h4 style={{
-        textAlign: 'left',
-        paddingTop: '8px',
-        paddingBottom: '8px',
-        margin: '0px',
-      }}>Books I like to read</h4>
-      <div id='book-parent-div' style={bookStyle.root}>
-          {bookData.map((tile) => (
-            <img key={tile.title} src={tile.img} alt={tile.title} width='187' height='300px' style={{ padding: '8px' }} />
-          ))}
-      </div>
-    </React.Fragment>
-  );
-}
+const Books = () => (
+  <React.Fragment>
+    <h4 style={{
+      textAlign: 'left',
+      paddingTop: '8px',
+      paddingBottom: '8px',
+      margin: '0px',
+    }}>
+      {constants.content.books.heading}
+    </h4>
+    <div id='book-parent-div' style={bookStyle.root}>
+        {bookData.map((tile) => (
+          <img
+            key={tile.title}
+            src={tile.img}
+            alt={tile.title}
+            width='187'
+            height='300px'
+            style={{ padding: '8px' }}
+          />
+        ))}
+    </div>
+  </React.Fragment>
+);
+
+export default Books;
